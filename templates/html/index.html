@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>SRM MONITOR</title>
+
+	<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="/assets/css/jquery.sidr.bare.css">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="/assets/mstile-144x144.png">
+	<link href="/assets/css/api.css" rel="stylesheet" type="text/css" />
+	<script src="/assets/js/jquery-3.1.1.js"></script>
+	<script src="/assets/js/jquery.simple.websocket.min.js"></script>
+	<script src="/assets/js/highcharts.js"></script>
+	<script type="text/javascript" src="/assets/themes/dark-unica.js"></script>
+	<script type="text/javascript" src="/assets/js/monitor.js"></script>
+</head>
+<body>
+<div id="top">
+	<div class="container top">
+		<div class="cell sidebar-nav-link">
+			<a id="sidebar-nav-link" class="sidebar-nav-link" href="#nav"><i class="fa fa-bars" aria-hidden="true"></i></a>
+		</div>
+		<div class="cell highcharts-logo highcharts-link">
+
+		</div>
+		<div class="cell page-title">
+			<h1>SRM MONITOR</h1>
+		</div>
+	</div>
+	<div class="container bottom">
+
+		
+	<div id="notice"></div>
+
+
+	</div>
+
+</div>
+<div id="wrapper">
+	<div class="container">
+
+		
+		<div class="container">
+			<div class="col-7">
+				<div class="container padded">
+					<h4>Services health status</h4>
+					<div id="services-container"></div>
+				</div>
+			</div>
+			<div class="col-5">
+				
+				<div class="container padded">
+					<h4>Sys stats</h4>
+					<div>Total CPU: <b>{{ gs.CPU|length }}</b></div>
+					<div>Total Vmem: <b>{{ gs.MemTotal/1026/1024 }}MB</b></div>
+					<div>Available mem: <b id="av-mem-c">0MB</b></div>
+					<div>Used mem: <b id="used-mem-c">0MB</b></div>
+					<div>SwapCached: <b id="sc-mem-c">0MB</b></div>
+					<div id="tcp-sockets-open"></div>
+					<div>
+						<h5>CPU info</h5>
+						<div>
+							<ul>
+							{% for c in gs.CPU %}
+
+								<li>
+									CPU{{ c.CPU }} {{ c.Cores }} core(s) @ {{ c.Mhz }}Mhz
+								</li>
+
+							{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="container">
+			<div class="col-4">
+				<div id="container-cpu-s"></div>
+			</div>
+			<div class="col-4">
+				<div id="container-mem-s"></div>
+			</div>
+			<div class="col-4">
+				<div id="container"></div>
+			</div>
+		</div>
+<script type="text/javascript">
+	
+
+	$(function() {
+	    console.log("start ws");
+	    initWS('{{ host }}', '{{ wsport }}');
+	});
+
+	
+</script>
+
+
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<div id="footer-copy">
+			&copy;&nbsp;SRM Monitor 2017. All rights reserved. Powered by Weasel.
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+<a id="scrollTop" href="#top" style="display: none;"><i class="fa fa-arrow-up"></i></a>
+</body>
+</html>

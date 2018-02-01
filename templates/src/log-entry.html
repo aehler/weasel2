@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+		<div class="container padded">
+<br>
+			{% verbatim %}
+			<div class="container">
+				<a href="/">Главная</a> | <a href="/log/{{ entry.Service }}/">Ошибки {{ entry.Service }}</a>
+			</div>
+
+			<h2><i class="fa fa-battery-{{ entry.SeverityLevel + 2 }} severity-{{ entry.SeverityLevel + 2 }}" aria-hidden="true"></i> {{ entry.Info }}</h2>
+			<div class="container padded">
+				<div>
+					<table>
+						<tr>
+							<td>Событие произошло</td>
+							<td>{{ entry.Occured|date:"02.01.2006 15:04:05" }}</td>
+						</tr>
+						<tr>
+							<td>Сервис</td>
+							<td>{{ entry.Service }}</td>
+						</tr>
+						<tr>
+							<td>Тип ошибки</td>
+							<td><i class="fa fa-battery-{{ entry.SeverityLevel + 2 }} severity-{{ entry.SeverityLevel + 2 }}" aria-hidden="true"></i></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+			<h4>Подробно</h4>
+			<div class="container">
+				<pre>
+					{{ details }}
+				</pre>
+			</div>
+			{% endverbatim %}
+		</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+app_token:  "ax5m95r1bvf3za26pmcx6ch8zmtzq3"
+#recipients: ["ufuodunoumzxvkhpqt97mao56n79nt", "us7gGiam2dX8nvAnjg2h3vXLws4qZ2"]
+recipients: []
+url: "http://127.0.0.1:808"
+level: -10 #do not send pushover for messages less severe then level

@@ -1,0 +1,92 @@
+importance:
+  type: plain
+  fields:
+    title:
+      type: text
+      name: title
+      label: Приоритет
+      ord: 1
+
+zfo:
+  type: tree
+  fields:
+    title:
+      type: text
+      name: title
+      label: Наименование ЦФО
+      ord: 1
+
+accounts:
+  type: plain
+  fields:
+    title:
+      type: text
+      name: title
+      label: Наименование счета
+      ord: 5
+
+cost_items:
+  type: tree
+  fields:
+    title:
+      type: text
+      name: title
+      label: Наименование статьи
+      ord: 1
+    is_cost:
+      type: bool
+      name: is_cost
+      label: Затратная статья
+      ord: 2
+
+project:
+  type: plain
+  fields:
+    title:
+      type: text
+      name: title
+      label: Наименование проекта
+      ord: 1
+    date_from:
+      type: date
+      name: date_from
+      label: Дата начала проекта
+      ord: 2
+    date_to:
+      type: date
+      name: date_to
+      label: Дата окончания проекта
+      ord: 3
+
+currency:
+  type: plain
+  fields:
+    title:
+      type: text
+      name: title
+      label: Наименование валюты
+      ord: 1
+    code:
+      type: uint
+      name: code
+      label: Код валюты
+      ord: 2
+
+periods:
+  type: tree
+  fields:
+    title:
+      type: text
+      name: title
+      label: Наименование периода
+      ord: 1
+    date_from:
+      type: date
+      name: date_from
+      label: Дата начала периода
+      ord: 2
+    date_to:
+      type: date
+      name: date_to
+      label: Дата окончания периода
+      ord: 3

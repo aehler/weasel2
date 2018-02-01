@@ -1,0 +1,37 @@
+db:
+  postgresql:
+    address: "192.168.1.211:5432"
+    username: "srm_monitor"
+    password: "IamAdiscoDancer"
+    database: "srm_monitor"
+
+#  mongodb:
+#    address: "192.168.1.56"
+#    username: ""
+#    password: ""
+#    database: "service_logs"
+
+redis:
+  host:   "192.168.1.211"
+  port:   6381
+  db:     9
+  mqname: "critical-notify"
+
+path:
+  templates: "templates/html" #Path to templates
+  static: "_assets" #Path to static
+  HTTPStatic: "assets" #Static will be served on this http path
+
+services:
+  server: "srm.service"
+  be_worker: "srm-be-worker.service"
+  srm_1c: "srm-onec-worker.service"
+  sendmail: "srm-sendmail.service"
+  password-mail: "srm-password-mail.service"
+  monitor: "srm-monitor.service"
+  postgres: "postgresql.service"
+  redis: "redis.service"
+  nginx: "nginx.service"
+  php-fpm: "php-fpm.service"
+
+metrics: ["SendPidInfo", "PSStats", "PSStatsPID", "TCPSockets"]
