@@ -1,7 +1,6 @@
 package app
 
 import (
-	"app/crypto"
 	"app/bindata/templates"
 	"github.com/flosch/pongo2"
 	"fmt"
@@ -15,10 +14,7 @@ var dir = "/srv/src/weasel/templates/pages"
 
 func InitBinaryTemplates(d string) {
 
-	pongo2.RegisterFilter("EncryptURL", func(in *pongo2.Value, param *pongo2.Value) (*pongo2.Value, *pongo2.Error) {
-
-		return pongo2.AsValue(crypto.EncryptUrl(uint(in.Integer()))), nil
-	})
+	filters()
 
 	for _, name := range templates.AssetNames() {
 
@@ -42,12 +38,9 @@ func InitBinaryTemplates(d string) {
 
 func InitTemplates(d string) {
 
+	filters()
+
 	dir = d
-
-	pongo2.RegisterFilter("EncryptURL", func(in *pongo2.Value, param *pongo2.Value) (*pongo2.Value, *pongo2.Error) {
-
-		return pongo2.AsValue(crypto.EncryptUrl(uint(in.Integer()))), nil
-	})
 
 	parseDir("")
 

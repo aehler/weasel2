@@ -1,0 +1,12 @@
+.search-bar {
+    background: rgba(151,151,151,.33);
+    padding: 20px;
+}
+
+#search-btn {
+    cursor: pointer;
+}
+
+.small-annotation {
+    font-size: 10px;
+}

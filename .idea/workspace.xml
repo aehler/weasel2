@@ -1,7 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="268faf11-2d12-4f97-8778-f429808334eb" name="Default" comment="" />
+    <list default="true" id="268faf11-2d12-4f97-8778-f429808334eb" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/custom.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/icons.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/materialize.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/materialize.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Bold.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Bold.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Light.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Light.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Medium.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Medium.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Thin.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Thin.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-1920x1080.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-404-1920x1080.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-500-1920x1080.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-rtr-1920x1080.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/custom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/jquery-3.3.1.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/materialize.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/materialize.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/filters.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/jsonRPC/client.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/jsonRPC/types.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/current_page.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/limiter.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/paginator.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/paginator_test.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/common/append.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/common/oauth.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/common/route.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/index/item.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/index/market.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/index/timeline.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/personal/my_blueprints.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/personal/route.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/helper/format_number.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/helper/num_in_words.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/helper/round.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/common/init.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/common/types.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/common/user_settings.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/character_client.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/init.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/market_client.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/request/character_skills.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/request/market_history.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/request/market_prices.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/character_skills.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/market_history.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/market_prices.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/types.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/SQL/schema.sql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/decryptors.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/filter.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/index.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/item.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/mats.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/skills.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/timeline.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/market/SQL/schema.sql" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/market/init.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/market/market.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/init.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/pinned_bpos.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/prod_line_attributes.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/report.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/scheduler/init.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/scheduler/local_data.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/scheduler/market.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/middleware/user_settings/user_settings.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/date.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/datetime.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/datetime_range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/foreach.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/foreach_group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/hidden.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/multiple_checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/multiple_select.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/multiple_select_filter.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/select.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/select_filter.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/text.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/text_range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/textarea.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item-general.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item-manufacturing.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item-research.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/macros.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/market.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/my-blueprints-report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/my-blueprints.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/paginator.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/timeline.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/assets/css/api.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/css/font-awesome.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/css/highcharts.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/css/jquery-ui.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/css/jquery.sidr.bare.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/FontAwesome.otf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/ArmsRace_1.0_Icons.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Highcharts.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-114x114.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-120x120.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-144x144.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-152x152.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-180x180.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-57x57.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-60x60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-72x72.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-76x76.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon-160x160.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon-16x16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon-192x192.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon-32x32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon-96x96.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/sprite.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/images/srm-cpl-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/js/highcharts.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery-3.1.1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.simple.websocket.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/js/monitor.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/avocado.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/avocado.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/avocado.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-blue.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-blue.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-blue.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-green.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-green.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-green.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-unica.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-unica.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/dark-unica.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/gray.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/gray.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/gray.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/grid-light.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/grid-light.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/grid-light.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/grid.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/grid.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/grid.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/sand-signika.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/sand-signika.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/sand-signika.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/skies.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/skies.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/skies.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/sunset.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/sunset.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/sunset.src.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/conf.d/config.yml" afterPath="$PROJECT_DIR$/conf.d/config.yml" />
+      <change beforePath="$PROJECT_DIR$/conf.d/pushover.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
+      <change beforePath="$PROJECT_DIR$/server.go" afterPath="$PROJECT_DIR$/server.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/bindata/assets/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/assets/a.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/bindata/templates/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/templates/a.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/context.go" afterPath="$PROJECT_DIR$/src/app/context.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/crypto/ecnrypt.go" afterPath="$PROJECT_DIR$/src/app/crypto/ecnrypt.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/elements.go" afterPath="$PROJECT_DIR$/src/app/form/elements.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/form.go" afterPath="$PROJECT_DIR$/src/app/form/form.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/mapper.go" afterPath="$PROJECT_DIR$/src/app/form/mapper.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/types.go" afterPath="$PROJECT_DIR$/src/app/form/types.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/registry/cfg.go" afterPath="$PROJECT_DIR$/src/app/registry/cfg.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/registry/path.go" afterPath="$PROJECT_DIR$/src/app/registry/path.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/registry/registry.go" afterPath="$PROJECT_DIR$/src/app/registry/registry.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/server.go" afterPath="$PROJECT_DIR$/src/app/server.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/session/memcached_client.go" afterPath="$PROJECT_DIR$/src/app/session/memcached_client.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/session/session.go" afterPath="$PROJECT_DIR$/src/app/session/session.go" />
+      <change beforePath="$PROJECT_DIR$/src/app/templates.go" afterPath="$PROJECT_DIR$/src/app/templates.go" />
+      <change beforePath="$PROJECT_DIR$/src/controller/index/common.go" afterPath="$PROJECT_DIR$/src/controller/index/common.go" />
+      <change beforePath="$PROJECT_DIR$/src/controller/index/logs.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/controller/index/route.go" afterPath="$PROJECT_DIR$/src/controller/index/route.go" />
+      <change beforePath="$PROJECT_DIR$/src/controller/index/ws.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth/user.go" afterPath="$PROJECT_DIR$/src/lib/auth/user.go" />
+      <change beforePath="$PROJECT_DIR$/src/lib/logs/init.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/logs/mgo_logs.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/logs/sqlx_logs.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/logs/types.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notifies/init.go" afterPath="$PROJECT_DIR$/src/lib/items/init.go" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notifies/pushover.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notifies/ws.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stats/cpu_times.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stats/init.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stats/pids.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stats/ps_stats.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/cpu_limit.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/init.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/mem_limit.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/restart_service.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/service_down.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/triggers.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/triggers/types.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/auth/auth.go" afterPath="$PROJECT_DIR$/src/middleware/auth/auth.go" />
+      <change beforePath="$PROJECT_DIR$/templates/html/errors/404.html" afterPath="$PROJECT_DIR$/templates/html/errors/404.html" />
+      <change beforePath="$PROJECT_DIR$/templates/html/errors/500.html" afterPath="$PROJECT_DIR$/templates/html/errors/500.html" />
+      <change beforePath="$PROJECT_DIR$/templates/html/index.html" afterPath="$PROJECT_DIR$/templates/html/index.html" />
+      <change beforePath="$PROJECT_DIR$/templates/src/errors/404.html" afterPath="$PROJECT_DIR$/templates/src/errors/404.html" />
+      <change beforePath="$PROJECT_DIR$/templates/src/errors/500.html" afterPath="$PROJECT_DIR$/templates/src/errors/500.html" />
+      <change beforePath="$PROJECT_DIR$/templates/src/index.html" afterPath="$PROJECT_DIR$/templates/src/index.html" />
+      <change beforePath="$PROJECT_DIR$/templates/src/layout.html" afterPath="$PROJECT_DIR$/templates/src/layout.html" />
+      <change beforePath="$PROJECT_DIR$/templates/src/log-entry.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/templates/src/log-list.html" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,9 +225,162 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="report.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lib/personal/report.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="324" column="22" lean-forward="false" selection-start-line="324" selection-start-column="22" selection-end-line="324" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timeline.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/items/timeline.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my-blueprints-report.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/src/my-blueprints-report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
-  <component name="GOROOT" path="$USER_HOME$/src/go-1.8" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tp.</find>
+      <find>don</find>
+      <find>ma</find>
+      <find>ANY(</find>
+      <find>&amp;res</find>
+      <find>console.</find>
+      <find>login</find>
+      <find>Market</find>
+      <find>MARKET</find>
+      <find>skills</find>
+      <find>RequiredSkills</find>
+      <find>charSkills</find>
+      <find>Res</find>
+      <find>userS</find>
+      <find>user.SessionID+&quot;_skills&quot;</find>
+      <find>/</find>
+      <find>DefaultBPOAttr</find>
+      <find>adjt</find>
+      <find>.ME</find>
+      <find>prepare</find>
+      <find>fmt.P</find>
+      <find>sales</find>
+      <find>pin</find>
+      <find>cache</find>
+      <find>market_share</find>
+      <find>dt</find>
+      <find>from ca</find>
+      <find>region</find>
+      <find>r.ME</find>
+      <find>fmt.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>v.</replace>
+      <replace>tiny</replace>
+      <replace>&lt;i class=&quot;material-icons&quot;&gt;arrow_drop_down&lt;/i&gt;</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/lib</dir>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="GOROOT" path="$USER_HOME$/src/go-1.9" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="GoLibraries">
+    <option name="urls">
+      <list>
+        <option value="file://$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/app/server.go" />
+        <option value="$PROJECT_DIR$/src/app/registry/cfg.go" />
+        <option value="$PROJECT_DIR$/src/app/registry/registry.go" />
+        <option value="$PROJECT_DIR$/src/lib/auth/user.go" />
+        <option value="$PROJECT_DIR$/src/controller/common/route.go" />
+        <option value="$PROJECT_DIR$/src/controller/index/common.go" />
+        <option value="$PROJECT_DIR$/src/lib/esi/character_client.go" />
+        <option value="$PROJECT_DIR$/src/lib/esi/request/character_skills.go" />
+        <option value="$PROJECT_DIR$/src/app/jsonRPC/types.go" />
+        <option value="$PROJECT_DIR$/src/lib/esi/request/market_history.go" />
+        <option value="$PROJECT_DIR$/src/lib/esi/request/market_prices.go" />
+        <option value="$PROJECT_DIR$/src/lib/esi/response/character_skills.go" />
+        <option value="$PROJECT_DIR$/src/app/jsonRPC/client.go" />
+        <option value="$PROJECT_DIR$/src/app/session/memcached_client.go" />
+        <option value="$PROJECT_DIR$/src/controller/index/timeline.go" />
+        <option value="$PROJECT_DIR$/src/controller/common/oauth.go" />
+        <option value="$PROJECT_DIR$/src/lib/items/1.json" />
+        <option value="$PROJECT_DIR$/src/app/handler.go" />
+        <option value="$PROJECT_DIR$/src/lib/personal/init.go" />
+        <option value="$PROJECT_DIR$/src/middleware/user_settings/user_settings.go" />
+        <option value="$PROJECT_DIR$/src/app/context.go" />
+        <option value="$PROJECT_DIR$/templates/src/paginator.html" />
+        <option value="$PROJECT_DIR$/templates/src/form/text.html" />
+        <option value="$PROJECT_DIR$/src/lib/personal/prod_line_attributes.go" />
+        <option value="$PROJECT_DIR$/src/app/form/types.go" />
+        <option value="$PROJECT_DIR$/src/lib/items/index.go" />
+        <option value="$PROJECT_DIR$/templates/src/item.html" />
+        <option value="$PROJECT_DIR$/templates/src/index.html" />
+        <option value="$PROJECT_DIR$/templates/src/layout.html" />
+        <option value="$PROJECT_DIR$/src/lib/items/init.go" />
+        <option value="$PROJECT_DIR$/src/lib/personal/pinned_bpos.go" />
+        <option value="$PROJECT_DIR$/src/controller/personal/route.go" />
+        <option value="$PROJECT_DIR$/templates/src/errors/500.html" />
+        <option value="$PROJECT_DIR$/templates/src/errors/404.html" />
+        <option value="$PROJECT_DIR$/src/controller/personal/my_blueprints.go" />
+        <option value="$PROJECT_DIR$/src/lib/items/timeline.go" />
+        <option value="$PROJECT_DIR$/assets/js/custom.js" />
+        <option value="$PROJECT_DIR$/src/lib/items/skills.go" />
+        <option value="$PROJECT_DIR$/src/controller/index/item.go" />
+        <option value="$PROJECT_DIR$/templates/src/item-manufacturing.html" />
+        <option value="$PROJECT_DIR$/templates/src/macros.html" />
+        <option value="$PROJECT_DIR$/src/lib/items/mats.go" />
+        <option value="$PROJECT_DIR$/templates/src/my-blueprints.html" />
+        <option value="$PROJECT_DIR$/src/lib/market/SQL/schema.sql" />
+        <option value="$PROJECT_DIR$/server.go" />
+        <option value="$PROJECT_DIR$/src/lib/scheduler/local_data.go" />
+        <option value="$PROJECT_DIR$/src/lib/items/decryptors.go" />
+        <option value="$PROJECT_DIR$/src/lib/market/market.go" />
+        <option value="$PROJECT_DIR$/src/lib/items/item.go" />
+        <option value="$PROJECT_DIR$/templates/src/my-blueprints-report.html" />
+        <option value="$PROJECT_DIR$/src/lib/personal/report.go" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -25,6 +393,23 @@
     <option name="width" value="1871" />
     <option name="height" value="1084" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Go</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -40,7 +425,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -49,15 +433,119 @@
               <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
               <item name="weasel2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="personal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="personal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="scheduler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+              <item name="user_settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/src" />
+      <recent name="$PROJECT_DIR$/src/lib/personal" />
+      <recent name="$PROJECT_DIR$/src/controller/personal" />
+      <recent name="$PROJECT_DIR$/src/lib/esi/request" />
+      <recent name="$PROJECT_DIR$/src/lib/esi/response" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/src/lib/esi/response" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -77,22 +565,22 @@
   <component name="ToolWindowManager">
     <frame x="1969" y="-4" width="1871" height="1084" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26356164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -103,14 +591,367 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/lib/notifies/init.go" />
+    <entry file="file://$PROJECT_DIR$/src/lib/common/types.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/filter.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/elements.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/form/text.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/types.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/mapper.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/esi/character_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/index/common.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/personal/prod_line_attributes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/index.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/item-general.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="63" lean-forward="true" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="49" lean-forward="false" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/personal/init.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/personal/pinned_bpos.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/personal/route.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="95" lean-forward="false" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/errors/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/errors/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="120" column="97" lean-forward="false" selection-start-line="120" selection-start-column="86" selection-end-line="120" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/esi/response/market_history.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/round.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/form/foreach.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/personal/my_blueprints.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="108" column="80" lean-forward="false" selection-start-line="108" selection-start-column="80" selection-end-line="108" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="99" column="46" lean-forward="false" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/src/go-1.9/src/strings/strings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/src/go-1.9/src/strings/strings_amd64.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/src/go-1.9/src/strings/compare.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/skills.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="70" column="56" lean-forward="false" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/session/memcached_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="126" column="25" lean-forward="false" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/index/item.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="81" column="78" lean-forward="false" selection-start-line="81" selection-start-column="78" selection-end-line="81" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/macros.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/item-manufacturing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="199" column="79" lean-forward="false" selection-start-line="199" selection-start-column="79" selection-end-line="199" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/esi/request/market_history.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/jsonRPC/types.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/SQL/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/market/SQL/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/jsonRPC/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/init.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/scheduler/local_data.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/my-blueprints.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="84" column="54" lean-forward="false" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/decryptors.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#15#56#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/esi/market_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/market/market.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/item.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/mats.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/src/my-blueprints-report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/items/timeline.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/personal/report.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="324" column="22" lean-forward="false" selection-start-line="324" selection-start-column="22" selection-end-line="324" selection-end-column="22" />
           <folding />
         </state>
       </provider>

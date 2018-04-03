@@ -1,0 +1,33 @@
+{% verbatim %}
+
+{% macro RenderTextareaField(element) %}
+
+	<div class="input-label{% if element.Error %} has-error{% endif %}">
+		{{ element.Label }}
+		{% if element.Required %}<span> *</span>{% endif %}
+	</div>
+	<div class="input-block">
+		<textarea name="{{ element.HashName }}"
+				  rows="3"
+				  {% if element.Disabled %} disabled {% endif %}
+				  placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+				  class="
+					  input
+					  {% if element.Error %} input-error{% endif %}
+					  {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+				  "
+		>{{ element.GetValue() }}</textarea>
+
+		{% if element.Error %}
+			<div class="error-block" role="alert">{{ element.Error }}</div>
+		{% endif %}
+
+		{% if element.Description %}
+			<div class="help-block">{{ element.Description }}</div>
+		{% endif %}
+	</div>
+	<div class="clear"></div>
+
+{% endmacro %}
+
+{% endverbatim %}

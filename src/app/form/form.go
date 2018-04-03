@@ -31,6 +31,17 @@ func New(t, n, s string) *Form {
 	}
 }
 
+func (f *Form) GetElement(name string) *Element {
+
+	for _, el := range f.Elements {
+		if el.Name == name {
+			return el
+		}
+	}
+
+	return nil
+}
+
 func (f *Form) Fields(els ...*Element) {
 
 	for _, el := range els {

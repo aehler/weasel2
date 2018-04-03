@@ -25,9 +25,13 @@ func (f *Form) MapStruct(s interface {}) error {
 		return errors.New(fmt.Sprintf("Form MapStruct recieved %s, but needs Struct", st.Kind().String()))
 	}
 
+	valSt := reflect.ValueOf(s)
+
 	for i := 0; i < st.NumField(); i++ {
 
 		field := st.Field(i)
+
+		valField := valSt.Field(i)
 
 		if field.Tag.Get("weaselform") == "" {
 
@@ -45,6 +49,11 @@ func (f *Form) MapStruct(s interface {}) error {
 
 		}
 
+		val := valField.Interface()
+		if valField.Kind() == reflect.Ptr {
+			val = valField.Addr().Interface()
+		}
+
 		e := Element{
 			Name : field.Name,
 			HashName : crypto.Encrypt(field.Name, f.salt),
@@ -52,7 +61,17 @@ func (f *Form) MapStruct(s interface {}) error {
 			Order : uint(i),
 			Type : elementType[field.Tag.Get("weaselform")],
 			TypeName : field.Tag.Get("weaselform"),
+			Value: val,
 		}
+
+		//meth, ok := field.Type.MethodByName("Options")
+		//
+		//if ok {
+		//
+		//	opts := meth.Func.Interface().(func() Options)
+		//
+		//	e.Options = opts
+		//}
 
 		f.Elements = append(f.Elements, &e)
 
@@ -79,16 +98,28 @@ func (f *Form) unmarshal(s interface {}) error {
 		return errors.New(fmt.Sprintf("Form unmarshal recieved %s, but needs *Struct", st.Kind().String()))
 	}
 
+	if v.Kind() == reflect.Ptr {
+		v = v.Elem()
+	}
+
 	vals := map[string]string{}
 
 	for _, e := range f.Elements {
 
 		vals[e.Name] = e.GetValue()
 
-		switch v.Elem().FieldByName(e.Name).Kind() {
+		switch v.FieldByName(e.Name).Kind() {
 
-		case reflect.String :
-			v.Elem().FieldByName(e.Name).SetString(e.GetValue())
+		case reflect.Bool:
+
+			if e.GetValue() == "" || e.GetValue() == "0" {
+				v.FieldByName(e.Name).Set(reflect.ValueOf(false))
+			} else {
+				v.FieldByName(e.Name).Set(reflect.ValueOf(true))
+			}
+
+		case reflect.String:
+			v.FieldByName(e.Name).SetString(e.GetValue())
 
 		case reflect.Uint :
 
@@ -98,7 +129,7 @@ func (f *Form) unmarshal(s interface {}) error {
 				val = 0
 			}
 
-			v.Elem().FieldByName(e.Name).Set(reflect.ValueOf(uint(val)))
+			v.FieldByName(e.Name).Set(reflect.ValueOf(uint(val)))
 
 		case reflect.Float64,
 			reflect.Float32:
@@ -109,15 +140,15 @@ func (f *Form) unmarshal(s interface {}) error {
 				val = 0
 			}
 
-			v.Elem().FieldByName(e.Name).Set(reflect.ValueOf(float64(val)))
+			v.FieldByName(e.Name).Set(reflect.ValueOf(float64(val)))
 
 		case reflect.Slice :
-			v.Elem().FieldByName(e.Name).Set(reflect.ValueOf(strings.Split(strings.Trim(e.GetValue(), " ")," ")))
+			v.FieldByName(e.Name).Set(reflect.ValueOf(strings.Split(strings.Trim(e.GetValue(), " ")," ")))
 
 		default:
 
 			continue;
-			//return errors.New(fmt.Sprintf("Cannot unmarshal type %s, element %s", v.Elem().FieldByName(e.Name).Kind(), e.Name))
+			//return errors.New(fmt.Sprintf("Cannot unmarshal type %s, element %s", v..FieldByName(e.Name).Kind(), e.Name))
 
 		}
 
@@ -125,11 +156,11 @@ func (f *Form) unmarshal(s interface {}) error {
 
 	//@todo Try to map dimensions
 
-//	for n := 0; n < v.Elem().NumField(); n++ {
+//	for n := 0; n < v..NumField(); n++ {
 //
-//		sd := v.Elem().Field(n)
+//		sd := v..Field(n)
 //
-//		if v.Elem().Field(n).Kind() == reflect.Ptr {
+//		if v..Field(n).Kind() == reflect.Ptr {
 //			sd = sd.Elem()
 //		}
 //
@@ -137,7 +168,7 @@ func (f *Form) unmarshal(s interface {}) error {
 //
 //			fmt.Println(sd.NumMethod())
 //
-//			//v.Elem().Field(n).MethodByName("MapValues").Call([]reflect.Value{reflect.ValueOf(vals)})
+//			//v..Field(n).MethodByName("MapValues").Call([]reflect.Value{reflect.ValueOf(vals)})
 //
 //		}
 //

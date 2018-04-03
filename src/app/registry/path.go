@@ -8,7 +8,8 @@ import (
 type Path struct {
 	Templates string
 	Static string
-	HTTPStatic string `yaml:"HTTPStatic"`
+	HTTPStatic  string `yaml:"HTTPStatic"`
+	ImageStatic string `yaml:"ImageStatic"`
 }
 
 func ReadPathConf(data []byte) *Path {

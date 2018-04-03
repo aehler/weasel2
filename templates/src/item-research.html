@@ -1,0 +1,117 @@
+{% extends "item.html" %}
+
+{% block itemcontent %}
+{% verbatim %}
+                <div class="col s12 l6">
+                    <h5>Invention</h5>
+                    <table class="responsive-table striped">
+                        <tr>
+                            <td>Result BPC max runs</td>
+                            <td class="valign-wrapper">
+                            {{ item.ResearchData.Quantity }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Base probability</td>
+                            <td class="valign-wrapper">
+                                {% set vv = item.ResearchData.Probability * 100 %}
+                            {{ vv|FormatPrice }}%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Adjusted probability</td>
+                            <td class="valign-wrapper">
+                                {% set vv = item.ResearchData.AdjProbability * 100 %}
+                            {{ vv|FormatPrice }}%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Base time</td>
+                            <td>{{ item.ResearchData.ResearchTime|FormatDuration }}</td>
+                        </tr>
+                        <tr>
+                            <td>Adjusted time</td>
+                            <td>{{ item.ResearchData.AdjTime|FormatDuration }}</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="col s12 l6">
+                    <h5>Required skills</h5>
+                    <table class="responsive-table striped">
+
+                        <tr>
+                            <th>Skill</th>
+                            <th>Minimum required</th>
+                            <th>My skills (Login)</th>
+                        </tr>
+                        {% for skill in item.ResearchData.RequiredSkills %}
+
+                            <tr>
+                                <td>{{ skill.SkillName }}</td>
+                                <td title="{{ skill.Level }}">
+                                    {% for i in "xxxxx" %}
+                                        {% if skill.Level <= forloop.Counter0 %}
+
+                                        {% else %}
+                                            <i class="material-icons tiny">border_outer</i>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </td>
+                                <td></td>
+                            </tr>
+                            {% for req in skill.Tree %}
+
+                                    <tr>
+                                        <td style="padding-left: {{ 10 + 5 * req.TreeLvl }}px;">{{ req.SkillName }}</td>
+                                        <td title="{{ req.Level }}">
+                                            {% for i in "xxxxx" %}
+                                            {% if req.Level <= forloop.Counter0 %}
+
+                                            {% else %}
+                                                <i class="material-icons tiny">border_outer</i>
+                                            {% endif %}
+                                            {% endfor %}
+
+                                        </td>
+                                        <td></td>
+                                    </tr>
+
+                            {% endfor %}
+
+                        {% endfor %}
+
+                    </table>
+
+                </div>
+
+                <div class="col s12 l12">
+                    <h5>Materials</h5>
+                        <table class="responsive-table striped">
+
+                            <tr>
+                                <th>Datacore</th>
+                                <th>Quantity</th>
+                                <th>Cost</th>
+                            </tr>
+                            {% for r in item.ResearchData.Materials %}
+                        <tr>
+                        <td>
+                        {{ r.MaterialTypeName }}
+                        </td>
+                        <td>
+                        {{ r.Quantity }}
+                        </td>
+                        <td>
+                        {{ r.Cost|FormatPrice }}
+                        </td>
+                        </tr>
+                            {% endfor %}
+
+                        </table>
+                </div>
+
+                {% endverbatim %}
+
+{% endblock %}

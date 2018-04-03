@@ -10,8 +10,8 @@ import (
 	"fmt"
 )
 
-const salt = "o0d*0sfJFMxWea2kd#sel#fajBee"
-const key = "0j8j4na__osffs99.03l4"
+const salt = "oK00FsP$uwjYkHnr=pT7Fm6w744#ee"
+const key = "x7QNv6yNKPq8ajz"
 
 func Encrypt(s, ls string) string {
 

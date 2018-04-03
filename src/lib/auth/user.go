@@ -35,13 +35,16 @@ type User struct {
 	Login          string `json:"l" db:"user_login"`
 	Email          string `json:"e" db:"user_email"`
 	IsAdmin        bool   `json:"adm" db:"is_admin"`
+	SessionID      string `json:"-" db:"-"`
+	OAuthToken     string `json:"-" db:"-"`
+	OAuthRToken    string `json:"-" db:"-"`
 }
 
 func AuthUser(login, password string) (*User, error) {
 
 	u := User{}
 
-	if err := registry.Registry.Connect.Get(&u, `select user_lastname, user_firstname, user_middlename, user_id, is_active, user_login, user_email, is_admin, organization_id
+	if err := registry.Registry.Connect.SQLX().Get(&u, `select user_lastname, user_firstname, user_middlename, user_id, is_active, user_login, user_email, is_admin, organization_id
 	from weasel_auth.users where user_login=$1 and user_password=$2 and is_active = true`,
 		login,
 		password,
@@ -77,7 +80,7 @@ func AddUser(r RegisterForm) (uint, error) {
 
 	password := crypto.Encrypt(r.Password, "")
 
-	if err := registry.Registry.Connect.Get(&res, `select * from weasel_auth.add_user($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+	if err := registry.Registry.Connect.SQLX().Get(&res, `select * from weasel_auth.add_user($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
 		1,
 		r.UserFirstName,
 		r.UserLastName,

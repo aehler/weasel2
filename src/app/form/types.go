@@ -13,6 +13,7 @@ const (
 	Number
 	TagList
 	Hidden
+	Autocomplete
 )
 
 var elementType = map[string]uint {
@@ -25,9 +26,10 @@ var elementType = map[string]uint {
 	"password" : Password,
 	"bool" : Checkbox,
 	"uint" : Uint,
-	"number" : Number,
+	"numeric" : Number,
 	"taglist" : TagList,
 	"hidden" : Hidden,
+	"autocomplete" : Autocomplete,
 }
 
 func MapType(key string) uint {

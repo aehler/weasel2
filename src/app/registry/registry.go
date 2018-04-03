@@ -14,9 +14,6 @@ type registry struct {
 	SessionKeys []*[32]byte
 	ReferenceConf map[string]*refConf
 	storage map[string]*storage
-	Monitor []string
-	SysctlNames map[string]string
-	WsChan RegChan
 	KVS *MemKV.MemKV
 }
 
@@ -38,11 +35,7 @@ func Init(rr Cfg, config string) {
 
 	Registry.Connect = db.New(rr.Db)
 
-	Registry.WsChan = NewRegChan()
-
-	Registry.initServices(rr.Services)
-
-	Registry.Session = session.Init()
+	Registry.Session = session.Init(rr.Memcached, rr.SessionTimeout)
 
 	Registry.SessionKeys = append(Registry.SessionKeys, &[32]byte{
 			'm',
@@ -59,17 +52,5 @@ func Init(rr Cfg, config string) {
 func (r *registry) Storage(key string) *storage {
 
 	return Registry.storage[key]
-
-}
-
-func (r *registry) initServices(rr map[string]string) {
-
-	r.SysctlNames = rr
-
-	for n, _ := range r.SysctlNames {
-
-		r.Monitor = append(r.Monitor, n)
-
-	}
 
 }

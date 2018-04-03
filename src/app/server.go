@@ -45,6 +45,8 @@ func New(configData []byte, config string, withBin bool) *App {
 
 		a.Router.ServeFiles(fmt.Sprintf("/%s/*filepath", pathes.HTTPStatic), assets.AssetFS())
 
+		a.Router.ServeFiles(fmt.Sprintf("/%s/*filepath", pathes.ImageStatic), http.Dir(pathes.Static))
+
 	} else {
 
 		InitTemplates(pathes.Templates)
@@ -63,9 +65,9 @@ func New(configData []byte, config string, withBin bool) *App {
 
 		rw.WriteHeader(http.StatusInternalServerError)
 
-		Templates["/errors/500.html"].ExecuteWriter(pongo2.Context{"Error" : "DON'T PANIC"}, rw)
+		Templates["/errors/500.html"].ExecuteWriter(pongo2.Context{"Error" : "DON'T PANIC", "Message" : fmt.Sprintf("%v\n", err)+string(debug.Stack())}, rw)
 
-		log.Printf("PANIC: %s\n", debug.Stack())
+		log.Printf("PANIC: %v\n %s\n", err, debug.Stack())
 	}
 
 	registry.Init(rr, config)

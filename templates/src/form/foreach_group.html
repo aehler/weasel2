@@ -1,0 +1,58 @@
+{% include "text.html"%}
+{% include "textarea.html"%}
+{% include "select.html"%}
+{% include "checkbox.html"%}
+{% include "datetime.html"%}
+{% include "date.html"%}
+{% include "multiple_select.html"%}
+{% include "multiple_checkbox.html"%}
+
+{% verbatim %}
+
+<!--{{ form.Title }}-->
+
+{% for group in form.Groups %}
+<div class="block-inner js-group-attribute clearfix">
+	<h4 class="font-700">
+		{% if group.Label %}
+			{{ group.Label }}
+        {% elif group.Name %}
+            {{ group.Name }}
+		{% else %}
+			{{ form.Title }}
+		{% endif %}
+	</h4>
+	<div class="group">
+
+		{% for element in group.Elements %}
+
+		{% if element.TplType() == "text" %}
+		{{ RenderTextField(element) }}
+		{% elif element.TplType() == "numeric" %}
+		{{ RenderTextField(element) }}
+		{% elif element.TplType() == "hidden" %}
+		{{ RenderHiddenField(element) }}
+		{% elif element.TplType() == "textarea" %}
+		{{ RenderTextareaField(element) }}
+		{% elif element.TplType() == "select" %}
+		{{ RenderSelectField(element) }}
+		{% elif element.TplType() == "multiple_select" %}
+		{{ RenderMultipleSelectField(element) }}
+		{% elif element.TplType() == "multiple_checkbox" %}
+		{{ RenderMultipleCheckboxField(element) }}
+		{% elif element.TplType() == "date" %}
+		{{ RenderDateField(element) }}
+		{% elif element.TplType() == "datetime" %}
+		{{ RenderDateTimeField(element) }}
+		{% elif element.TplType() == "checkbox" %}
+		{{ RenderCheckboxField(element) }}
+		{% endif %}
+		{% endfor %}
+
+	</div>
+</div>
+
+
+{% endfor %}
+
+{% endverbatim %}

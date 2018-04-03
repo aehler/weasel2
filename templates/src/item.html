@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+        {% include "macros.html" %}
+<div class="container">
+		<div class="row">
+			<div class="col s12 l12">
+                {% verbatim %}
+
+                {% if selected == "index" %}
+                    <nav class="blue-grey lighten-2">
+                {% elif selected == "manufacturing" %}
+                    <nav class="orange lighten-1">
+                {% elif selected == "research" %}
+                    <nav class="blue lighten-1">
+                {% elif selected == "market" %}
+                    <nav class="grey lighten-1">
+                {% elif selected == "timeline" %}
+                    <nav class="green lighten-1">
+                {% endif %}
+                    <div class="nav-wrapper">
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
+                            <li{% if selected == "index" %} class="active"{% endif %}><a href="/item/{{ item.TypeID|EncryptURL }}">General</a></li>
+                            <li{% if selected == "manufacturing" %} class="active"{% endif %}><a href="/item-manufacturing/{{ item.TypeID|EncryptURL }}">Manufacturing</a></li>
+                            <li{% if selected == "research" %} class="active"{% endif %}><a href="/item-research/{{ item.TypeID|EncryptURL }}">Invention</a></li>
+                            <li{% if selected == "market" %} class="active"{% endif %}><a href="/market/{{ item.TypeID|EncryptURL }}">Market</a></li>
+                            <li{% if selected == "timeline" %} class="active"{% endif %}><a href="/timeline/{{ item.TypeID|EncryptURL }}">Production timeline</a></li>
+                            <li><a href="#" class="my-blueprints-control" data-typeid="{{ item.TypeID|EncryptURL }}"><i class="material-icons" title="Pin it!">pin_drop</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <h3 class="valign-wrapper">
+                       <img src="/images/types/{{ item.TypeID }}_64.png"> {{ item.BpoName }}
+                </h3>
+
+
+                {% endverbatim %}
+                {% block itemcontent %}{% endblock %}
+
+			</div>
+		</div>
+</div>
+{% endblock %}

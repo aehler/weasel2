@@ -8,6 +8,6 @@ type Cfg struct{
 	Db map[string]db.Dbcreds
 	Redis *Rediscreds
 	Path *Path
-	Services map[string]string
-	Metrics []string
+	SessionTimeout int32 `yaml:"session-timeout"`
+	Memcached string
 }

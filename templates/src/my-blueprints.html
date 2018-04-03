@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block top %}
+{% endblock %}
+
+{% block content %}
+		<div class="row">
+            {% verbatim %}
+                <form name="{{form.Name}}" method="{{form.Method}}" action="{{form.Action}}" id="report-form">
+            {% endverbatim %}
+            <div class="col s12 l2 card blue-grey lighten-5">
+                <div class="card-content">
+
+                    <span class="card-title">Attributes</span>
+
+                        {% include "form/foreach.html" %}
+                        <button class="btn waves-effect waves-light blue-grey lighten-1 disableable" type="submit" name="action">Get detailed quote
+                            <i class="material-icons right">send</i>
+                        </button>
+                </div>
+            </div>
+            <div class="col s12 l8">
+                <h3><i class="material-icons left medium">pin_drop</i> Pinned blueprints</h3>
+                {% verbatim %}
+                <table class="responsive-table bordered">
+                    <tr>
+                        <th>Blueprint</th>
+                        <th>ME</th>
+                        <th>TE</th>
+                        <th>I will produce</th>
+                        <th>I will invent</th>
+                        <th>Unpin</th>
+                    </tr>
+
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <a class="valign-wrapper" href="/item/{{ item.TypeID|EncryptURL }}"><img src="/images/types/{{ item.TypeID }}_32.png" class="eve-icon">{{ item.BpoName }}</a>
+                        </td>
+                        <td>
+                            <div class="input-field col s12 l3">
+                                <select name="me_{{ item.TypeID|EncryptURL }}">
+                                    <option value="0"{% if item.ME|integer == 0%} selected{% endif %}>0%</option>
+                                    <option value="1"{% if item.ME|integer == 1%} selected{% endif %}>1%</option>
+                                    <option value="2"{% if item.ME|integer == 2%} selected{% endif %}>2%</option>
+                                    <option value="3"{% if item.ME|integer == 3%} selected{% endif %}>3%</option>
+                                    <option value="4"{% if item.ME|integer == 3%} selected{% endif %}>4%</option>
+                                    <option value="5"{% if item.ME|integer == 3%} selected{% endif %}>5%</option>
+                                    <option value="6"{% if item.ME|integer == 3%} selected{% endif %}>6%</option>
+                                    <option value="7"{% if item.ME|integer == 3%} selected{% endif %}>7%</option>
+                                    <option value="8"{% if item.ME|integer == 3%} selected{% endif %}>8%</option>
+                                    <option value="9"{% if item.ME|integer == 3%} selected{% endif %}>9%</option>
+                                    <option value="10"{% if item.ME|integer == 3%} selected{% endif %}>10%</option>
+                                </select>
+                                <label>ME</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12 l3">
+                                <select name="te_{{ item.TypeID|EncryptURL }}">
+                                    <option value="0"{% if item.ME|integer == 0%} selected{% endif %}>0%</option>
+                                    <option value="2"{% if item.ME|integer == 1%} selected{% endif %}>2%</option>
+                                    <option value="4"{% if item.ME|integer == 2%} selected{% endif %}>4%</option>
+                                    <option value="6"{% if item.ME|integer == 3%} selected{% endif %}>6%</option>
+                                    <option value="8"{% if item.ME|integer == 3%} selected{% endif %}>8%</option>
+                                    <option value="10"{% if item.ME|integer == 3%} selected{% endif %}>10%</option>
+                                    <option value="12"{% if item.ME|integer == 3%} selected{% endif %}>12%</option>
+                                    <option value="14"{% if item.ME|integer == 3%} selected{% endif %}>14%</option>
+                                    <option value="16"{% if item.ME|integer == 3%} selected{% endif %}>16%</option>
+                                    <option value="18"{% if item.ME|integer == 3%} selected{% endif %}>18%</option>
+                                    <option value="20"{% if item.ME|integer == 3%} selected{% endif %}>20%</option>
+                                </select>
+                                <label>TE</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12">
+                                <input placeholder="Leave blank to find optimal quantity" name="batch_{{ item.TypeID|EncryptURL }}" id="batch_{{ item.TypeID|EncryptURL }}" type="text" class="validate">
+                                <label class="active" for="batch_{{ item.TypeID|EncryptURL }}">Quantity</label>
+                            </div>
+                        </td>
+                        <td>
+                            <p>
+                                <input{% if item.TechLvl|integer == 1 or item.TechLvl|integer == 0 %} disabled="disabled"{% endif %} type="checkbox" id="invention_{{ item.TypeID|EncryptURL }}" name="invention_{{ item.TypeID|EncryptURL }}" />
+                                <label for="invention_{{ item.TypeID|EncryptURL }}">Yes</label>
+                            </p>
+                        </td>
+                        <td>
+                            <a href="#" class="button-link my-blueprints-control" data-typeid="{{ item.TypeID|EncryptURL }}" onclick="rowDel();"><i class="material-icons grey-text text-darken-1" title="Pin it!">pin_drop</i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+    <br><br>
+
+                <div id="sbm-progress" style="display: none;">
+                    Might need to gather some data from EVE servers, please be patient
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+
+
+                <button class="btn waves-effect waves-light blue-grey lighten-1 right disableable" type="submit" name="action">Get detailed quote
+                    <i class="material-icons right">send</i>
+                </button>
+
+                {% endverbatim %}
+            </div>
+            <div class="col s12 l2">
+                banner
+            </div>
+            </form>
+		</div>
+
+        {% verbatim %}
+        <script>
+
+            $(document).ready(function(){
+
+                $("#report-form").on('submit', function(e){
+                    $("#sbm-progress").show();
+                    $(".disableable").attr("disabled", "disabled");
+                });
+            });
+
+            var rowDel = function(){
+                $(this).parentElement.parentElement.remove();
+            }
+        </script>
+        {% endverbatim %}
+
+{% endblock %}
+
+{% block settings %}{% endblock %}

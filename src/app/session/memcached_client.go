@@ -4,24 +4,91 @@ import (
 	"github.com/bradfitz/gomemcache/memcache"
 	"encoding/json"
 	"fmt"
+	"time"
 )
 
 type SessionStorage struct {
 	mcClient *memcache.Client
+	SStimeout int32
 }
 
-func Init() (*SessionStorage) {
+func Init(mg string, sst int32) (*SessionStorage) {
 
 	s := &SessionStorage{
-		mcClient : memcache.New("127.0.0.1:11211"),
+		mcClient : memcache.New(mg),
+		SStimeout: sst,
 	}
 
 	return s
 }
 
-func (s *SessionStorage) Add(ssid string, user interface {}) error {
+func (s *SessionStorage) Cache(key string, value []byte, ttl time.Duration) {
 
-	fmt.Println("Setting new", ssid)
+	err := s.mcClient.Add(&memcache.Item{
+		Key : key,
+		Value : value,
+		Flags : 0,
+		Expiration : int32(ttl.Seconds()),
+	})
+	if err != nil {
+
+		err = s.mcClient.Replace(&memcache.Item{
+			Key : key,
+			Value : value,
+			Flags : 0,
+			Expiration : int32(ttl.Seconds()),
+		})
+
+	}
+
+}
+
+func (s *SessionStorage) Upsert(key string, value interface{}) error {
+
+	if _, err := s.mcClient.Get(key); err != nil {
+
+		if err.Error() == "memcache: cache miss" {
+
+			return s.Add(key, value)
+
+		} else {
+
+			return err
+
+		}
+
+	} else {
+
+		return s.Replace(key, value)
+
+	}
+
+}
+
+func (s *SessionStorage) Replace(key string, value interface{}) error {
+
+	b, err := json.Marshal(value)
+
+	if err != nil {
+
+		return err
+	}
+
+	err = s.mcClient.Replace(&memcache.Item{
+		Key : key,
+		Value : b,
+		Flags : 0,
+		Expiration : s.SStimeout,
+	})
+	if err != nil {
+
+		return err
+	}
+
+	return nil
+}
+
+func (s *SessionStorage) Add(ssid string, user interface {}) error {
 
 	b, err := json.Marshal(user)
 
@@ -34,10 +101,37 @@ func (s *SessionStorage) Add(ssid string, user interface {}) error {
 		Key : ssid,
 		Value : b,
 		Flags : 0,
-		Expiration : 3600,
+		Expiration : s.SStimeout,
 	})
 	if err != nil {
 
+		return err
+	}
+
+	return nil
+}
+
+func (s *SessionStorage) GetNoTouch(ssid string) ([]byte, error) {
+
+	i, err := s.mcClient.Get(ssid)
+
+	if err != nil {
+
+		return nil, err
+
+	}
+
+	return i.Value, nil
+}
+
+func (s *SessionStorage) Unmarshal(key string, res interface{}) error {
+
+	b, err := s.GetNoTouch(key)
+	if err != nil {
+		return err
+	}
+
+	if err := json.Unmarshal(b, res); err != nil {
 		return err
 	}
 
@@ -54,7 +148,7 @@ func (s *SessionStorage) Get(ssid string) ([]byte, error) {
 
 	}
 
-	s.mcClient.Touch(ssid, 3600)
+	s.mcClient.Touch(ssid, s.SStimeout)
 
 	return i.Value, nil
 }

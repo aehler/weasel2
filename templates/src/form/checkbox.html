@@ -1,0 +1,20 @@
+{% verbatim %}
+{% macro RenderCheckboxField(element) %}
+
+
+<p>
+    <input {% if element.Disabled %} disabled {% endif %}
+            id="{{ element.HashName }}"
+            type="checkbox"
+            name="{{ element.HashName }}"
+            value="1"
+            {% if element.Value %} checked {% endif %}
+    >
+    <label for="{{ element.HashName }}">{{ element.Label }}
+        {% if element.Required %}<span> *</span>{% endif %}
+    </label>
+</p>
+
+{% endmacro %}
+
+{% endverbatim %}

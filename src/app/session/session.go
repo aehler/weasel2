@@ -56,7 +56,7 @@ func (c *Config) maxAge() time.Duration {
 
 func (c *Config) name() string {
 	if c.Name == "" {
-		return "session"
+		return "weasel2_session"
 	}
 	return c.Name
 }

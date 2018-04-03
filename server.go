@@ -2,6 +2,7 @@ package main
 
 import (
 	"controller/index"
+	"controller/common"
 	"app"
 	"app/registry"
 	"log"
@@ -9,22 +10,19 @@ import (
 	"net/http"
 	"fmt"
 	"time"
-	_ "lib/stats"
-	"lib/stats"
-	_ "lib/notifies"
-	"lib/notifies"
-	_"lib/triggers"
 	//"app/registry"
-	"golang.org/x/net/websocket"
-	"sync"
 	"runtime"
 	"math"
 	"os"
-	"lib/logs"
-	"lib/triggers"
 	"io/ioutil"
-	"reflect"
 	_ "net/http/pprof"
+	_ "lib/esi"
+	_ "lib/scheduler"
+	_ "lib/items"
+	_ "lib/market"
+	clib "lib/common"
+	"controller/personal"
+	"lib/items"
 )
 
 type Router interface {
@@ -35,7 +33,6 @@ type Router interface {
 var (
 	host         = flag.String("host", "", "host to listen to, leave blank to listen on any host")
 	port         = flag.Uint("port", 80, "the port to listen on")
-	ws_port      = flag.Uint("ws_port", 3000, "the port to listen for websocket")
 	withBinData  = flag.Bool("withbinstatic", false,"Use binary http static and templates")
 	config       = ""
 )
@@ -61,20 +58,17 @@ func main() {
 
 	a := app.New(data, config, *withBinData)
 
-	logs.Init()
-
-	if registry.Registry.Redis != nil {
-
-		registry.Registry.Redis.AddListener(logs.Logs.Store)
-		registry.Registry.Redis.AddListener(notifies.PushoverMQ)
-		registry.Registry.Redis.AddListener(notifies.WS)
-		registry.Registry.Redis.AddListener(triggers.RestartByFailure)
-
-	}
-
-	registry.Registry.KVS.Put([]byte("ws_port"), *ws_port)
+	registry.Registry.KVS.Put([]byte("started at"), time.Now())
 
 	index.Route(a)
+	common.Route(a)
+	personal.Route(a)
+
+	clib.Init()
+
+	if err := items.GetDecryptorData(); err != nil {
+		log.Fatal("Error getting decryptor data", err.Error())
+	}
 
 	fmt.Println("Starting HTTP server on port", *port)
 
@@ -84,70 +78,6 @@ func main() {
 		log.Println(http.ListenAndServe(":8085", nil))
 	}()
 
-	go monitor()
-
-	go ws()
-
-	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%d", *host, *port), a.Router))
-
-}
-
-func ws() {
-
-	http.Handle("/", websocket.Handler(index.WsHandler))
-
-	err := http.ListenAndServe(fmt.Sprintf(":%d", *ws_port), nil)
-
-	if err != nil {
-
-		panic("ListenAndServe: " + err.Error())
-
-	}
-
-}
-
-func monitor() {
-
-	metrics := []reflect.Value{}
-
-	var syn = sync.Mutex{}
-
-	s := stats.Metrics{}
-
-	for _, method := range registry.Registry.Config.Metrics {
-
-		m := reflect.ValueOf(s).MethodByName(method)
-
-		if m.IsValid() {
-
-			metrics = append(metrics, m)
-
-			log.Println("Using", method)
-		}
-
-	}
-
-	for {
-
-		syn.Lock()
-		stats.UpdatePids()
-		stats.CPUTimes()
-		syn.Unlock()
-
-		for _, m := range metrics {
-
-			go m.Call([]reflect.Value{})
-
-		}
-
-		//go s.SendPidInfo()
-		//go s.PSStats()
-		//go s.PSStatsPID()
-		//go s.TCPSockets()
-
-		//log.Printf("Stats read in %v\n", time.Since(t))
-
-		time.Sleep(stats.MONITOR_TICKS_SECONDS)
-	}
+	log.Fatal(http.ListenAndServeTLS(fmt.Sprintf("%s:%d", *host, *port), "cert/cert.pem", "cert/key.pem", a.Router))
 
 }

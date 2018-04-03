@@ -1,0 +1,49 @@
+{% extends "item.html" %}
+
+{% block itemcontent %}
+
+
+{% verbatim %}
+
+                <div class="col s12 l12">
+                    <h5>General</h5>
+                    <table class="responsive-table striped">
+                        <tr>
+                            <td>Product</td>
+                            <td class="valign-wrapper">
+                                <div class="left valign-wrapper"><img src="/images/types/{{ item.ProductTypeID }}_32.png">{{ item.ProductName }}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BPO exists on market</td>
+                            <td>{% if item.BPOPurchasable %}<a href="/market/{{ item.TypeID|EncryptURL }}" class="button-link">Market</a>{% else %}No{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td>Batch</td>
+                            <td>{{ item.Batch }}</td>
+                        </tr>
+                        <tr>
+                            <td>Adjusted manufacturing time</td>
+                            <td><b>{{ item.AdjTime|FormatDuration }}</b></td>
+                        </tr>
+                        <tr>
+                            <td>Average price</td>
+                            <td><b>{{ item.SalesAvg|FormatPrice }}</b></td>
+                        </tr>
+                        <tr>
+                            <td>Cost direct production</td>
+                            <td>{{ item.TotalCostBuy|FormatPrice }}</td>
+                        </tr>
+                        <tr>
+                            <td>Marginal income direct production</td>
+                            <td>{{ item.MarginalIncomeBuy|FormatPrice }}</td>
+                        </tr>
+                        <tr>
+                            <td>Isk/h direct production</td>
+                            <td><b>{{ item.IskhBuy|FormatPrice }}</b></td>
+                        </tr>
+                    </table>
+                </div>
+                {% endverbatim %}
+
+{% endblock %}

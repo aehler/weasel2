@@ -2,8 +2,8 @@
 
 echo "build templates"
 
-/www/build-html  -i="/srv/src/monitor/templates/src" -o="/srv/src/monitor/templates/html" -c="" -s=false
-rm -f /srv/src/monitor/templates/html/layout.html
+/www/build-html  -i="/srv/src/weasel2/templates/src" -o="/srv/src/weasel2/templates/html" -c="" -s=false
+rm -f /srv/src/weasel2/templates/html/layout.html
 
 echo "generate bindata"
 
@@ -20,9 +20,8 @@ grep 'func assetFS' -P -R -I -l  ./src/app/bindata/assets/* | xargs sed -i 's/fu
 
 echo "build app"
 
-env GOPATH=$GOPATH:/srv/src/monitor/ go build -race -v
-mv -f monitor bin/
+env GOPATH=$GOPATH:/srv/src/weasel2/ go build -race -v -o bin/eve-industry
 
 echo "run"
 
-sudo env CONFIG="/srv/src/monitor/conf.d" GODEBUG=gctrace=1 bin/monitor -port 808 -withbinstatic
+env CONFIG="/srv/src/weasel2/conf.d" GODEBUG=gctrace=1 bin/eve-industry -port 8087 -withbinstatic

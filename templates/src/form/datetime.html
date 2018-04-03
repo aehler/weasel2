@@ -1,0 +1,43 @@
+
+{% verbatim %}
+{% macro RenderDateTimeField(element) %}
+
+<!-- Дейтпикер -->
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+<div class="input-block js-input-datepicker">
+    <input
+            {% if element.Disabled %} disabled {% endif %}
+            class="
+                input datetimepicker
+                {% if element.Error %} input-error{% endif %}
+                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+            "
+            type="text"
+            name="{{ element.HashName }}"
+    {% if element.GetValue() %}
+            value="{{ element.GetValue() }}"
+    {% else %}
+            value=""
+    {% endif %}
+            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
+    >
+
+    <div class="error-block js-input-error" role="alert">
+        {% if element.Error %}
+            {{ element.Error }}
+        {% endif %}
+    </div>
+
+    {% if element.Description %}
+    <div class="help-block">{{ element.Description }}</div>
+    {% endif %}
+</div>
+<div class="clear"></div>
+<!-- Дейтпикер конец -->
+
+{% endmacro %}
+
+{% endverbatim %}

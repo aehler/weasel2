@@ -1,0 +1,38 @@
+{% verbatim %}
+{% macro RenderMultipleCheckboxField(element) %}
+	
+<div class="form-group">
+
+	{% for option in element.Options() %}
+		<div class="input-label"></div>
+		<div class="input-block">
+			<label class="checkbox-container">
+				<input
+					class="checkbox"
+					type="checkbox"
+					name="{{ element.HashName() }}[]"
+					value="{{ option.Value }}"
+					{% if element.In(option.Value) %} checked {% endif %}
+				>
+				<span>
+					<span class="checkbox__label">{{ option.Label }}</span>
+					{% if element.Description %}
+						<div class="checkbox__descr"> — {{ element.Description }}</div>
+					{% endif %}
+				</span>
+
+			</label>
+
+			{% if element.Error %}
+			<div class="error-block" role="alert">{{ element.Error }}</div>
+			{% endif %}
+
+		</div>
+		<div class="clear"></div>
+	{% endfor%}
+
+</div>
+{% endmacro %}
+
+{% endverbatim %}
+

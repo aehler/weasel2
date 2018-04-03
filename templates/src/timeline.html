@@ -1,0 +1,37 @@
+{% extends "item.html" %}
+
+{% block notice %}
+	<div id="notice"></div>
+{% endblock %}
+
+{% block itemcontent %}
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/xrange.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<div class="row">
+        {% verbatim %}
+            <div class="input-field">
+                <input id="batch" value="{{ prodBatch }}" type="text" autocomplete="off" />
+                <label for="batch">Quantity I want to produce</label>
+            </div>
+
+            {% for m in item.Materials %}
+                {% if m.ComponentBPO != 0 %}
+                {% endif %}
+            {% endfor %}
+
+        {% endverbatim %}
+            <div id="container" style="height: 500px; min-width: 310px"></div>
+    </div>
+
+        <script>
+            $(document).ready(function(){
+
+                ajaxTimeLine({batch: $("#batch").val(), regionId: '{% verbatim %}{{ item.TypeID|EncryptURL }}{% endverbatim %}'});
+
+            });
+        </script>
+
+{% endblock %}
