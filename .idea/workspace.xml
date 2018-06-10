@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="268faf11-2d12-4f97-8778-f429808334eb" name="Default" comment="++">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bin/eve-industry" afterPath="$PROJECT_DIR$/bin/eve-industry" />
-      <change beforePath="$PROJECT_DIR$/src/app/bindata/assets/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/assets/a.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/bindata/templates/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/templates/a.go" />
+    <list default="true" id="268faf11-2d12-4f97-8778-f429808334eb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/weasel2.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cert/cert.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cert/key.pem" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -209,12 +210,6 @@
               <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
               <item name="weasel2" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
