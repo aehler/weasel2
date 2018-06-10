@@ -2,12 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="268faf11-2d12-4f97-8778-f429808334eb" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/EVE_SSO_Login_Buttons_Small_White.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bin/eve-industry" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cert/cert.pem" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cert/key.pem" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/date.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/datetime.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/datetime_range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/foreach.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/foreach_group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/hidden.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/multiple_checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/multiple_select.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/multiple_select_filter.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/select.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/select_filter.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/text.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/text_range.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/form/textarea.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/item-general.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/item-manufacturing.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/item-research.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/item.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/macros.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/market.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/my-blueprints-report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/my-blueprints.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/paginator.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/html/timeline.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/bin/monitor" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/app/bindata/assets/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/assets/a.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/bindata/templates/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/templates/a.go" />
-      <change beforePath="$PROJECT_DIR$/src/lib/personal/report.go" afterPath="$PROJECT_DIR$/src/lib/personal/report.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +56,7 @@
       <file leaf-file-name="report.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/personal/report.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
+            <state relative-caret-position="5145">
               <caret line="343" column="9" lean-forward="false" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
               <folding>
                 <element signature="e#18#135#0" expanded="true" />
@@ -239,6 +264,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,8 +287,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,6 +297,7 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -305,9 +331,9 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1968" y="-11" width="1873" height="1092" extended-state="6" />
+    <frame x="1969" y="-4" width="1871" height="1084" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23232877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2350685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -672,7 +698,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/personal/report.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="5145">
           <caret line="343" column="9" lean-forward="false" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
           <folding>
             <element signature="e#18#135#0" expanded="true" />
@@ -692,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-555">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

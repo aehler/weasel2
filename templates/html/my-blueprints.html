@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>EVE INDUSTRY MARKET ANALYZER</title>
+
+	<link href="/assets/css/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css" type="text/css" media="screen,projection" />
+    <link rel="stylesheet" href="/assets/css/custom.css" type="text/css" media="screen,projection" />
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+	<script src="/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/custom.js"></script>
+</head>
+<body class="grey lighten-5 grey-text text-darken-4">
+
+<nav class="blue-grey" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">EIMA</a>
+
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Settings</a></li>
+            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Pinned Blueprints 
+
+                {% if pinnedBPOCount|integer > 0 %}
+                    <span class="new badge orange" data-badge-caption="">{{ pinnedBPOCount|integer }}</span>
+                {% endif %}
+                
+            </a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Settings</a></li>
+            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Pinned Blueprints 
+
+                {% if pinnedBPOCount|integer > 0 %}
+                <span id="pinned-count" class="new badge orange" data-badge-caption="">{{ pinnedBPOCount|integer }}</span>
+                {% endif %}
+                </a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+
+</nav>
+
+<div class="row">
+    <div class="container col s12 l6 right">
+        <div class="input-field col s8 inline left">
+            <i class="material-icons prefix" id="search-btn">search</i>
+            <input id="search" type="text" name="searchText" class="grey-text" value="{{ search }}">
+            <label for="search">Search</label>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+		<div class="row">
+            
+                <form name="{{form.Name}}" method="{{form.Method}}" action="{{form.Action}}" id="report-form">
+            
+            <div class="col s12 l2 card blue-grey lighten-5">
+                <div class="card-content">
+
+                    <span class="card-title">Attributes</span>
+
+                        
+{% macro RenderTextField(element) %}
+
+<div class="row">
+    <div class="input-field col s12">
+
+        <input  {% if element.Disabled %} disabled {% endif %}
+				id="{{ element.HashName }}"
+                class=""
+                {% if element.TplType() == "numeric" %}
+                type="number"
+                {% else %}
+                type="text"
+                {% endif %}
+                name="{{ element.HashName }}"
+                value="{{ element.GetValue() }}"
+                placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+        >
+		<label for="{{ element.HashName }}">{{ element.Label }}
+            {% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+
+{% endmacro %}
+
+
+
+
+
+{% macro RenderTextareaField(element) %}
+
+	<div class="input-label{% if element.Error %} has-error{% endif %}">
+		{{ element.Label }}
+		{% if element.Required %}<span> *</span>{% endif %}
+	</div>
+	<div class="input-block">
+		<textarea name="{{ element.HashName }}"
+				  rows="3"
+				  {% if element.Disabled %} disabled {% endif %}
+				  placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+				  class="
+					  input
+					  {% if element.Error %} input-error{% endif %}
+					  {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+				  "
+		>{{ element.GetValue() }}</textarea>
+
+		{% if element.Error %}
+			<div class="error-block" role="alert">{{ element.Error }}</div>
+		{% endif %}
+
+		{% if element.Description %}
+			<div class="help-block">{{ element.Description }}</div>
+		{% endif %}
+	</div>
+	<div class="clear"></div>
+
+{% endmacro %}
+
+
+
+
+{% macro RenderSelectField(element) %}
+<div class="row">
+	<div class="input-field col s12">
+
+		<select
+				name="{{ element.HashName }}"
+		>
+			{% for option in element.Options %}
+			<option value="{{ option.Value }}" {% if element.GetValue()|integer == option.Value|integer %} selected {% endif %}>{{ option.Label }}</option>
+			{% endfor%}
+		</select>
+
+		<label>{{ element.Label }}
+			{% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+{% endmacro %}
+
+
+
+{% macro RenderCheckboxField(element) %}
+
+
+<p>
+    <input {% if element.Disabled %} disabled {% endif %}
+            id="{{ element.HashName }}"
+            type="checkbox"
+            name="{{ element.HashName }}"
+            value="1"
+            {% if element.Value %} checked {% endif %}
+    >
+    <label for="{{ element.HashName }}">{{ element.Label }}
+        {% if element.Required %}<span> *</span>{% endif %}
+    </label>
+</p>
+
+{% endmacro %}
+
+
+
+
+
+{% macro RenderDateTimeField(element) %}
+
+<!-- Дейтпикер -->
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+<div class="input-block js-input-datepicker">
+    <input
+            {% if element.Disabled %} disabled {% endif %}
+            class="
+                input datetimepicker
+                {% if element.Error %} input-error{% endif %}
+                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+            "
+            type="text"
+            name="{{ element.HashName }}"
+    {% if element.GetValue() %}
+            value="{{ element.GetValue() }}"
+    {% else %}
+            value=""
+    {% endif %}
+            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
+    >
+
+    <div class="error-block js-input-error" role="alert">
+        {% if element.Error %}
+            {{ element.Error }}
+        {% endif %}
+    </div>
+
+    {% if element.Description %}
+    <div class="help-block">{{ element.Description }}</div>
+    {% endif %}
+</div>
+<div class="clear"></div>
+<!-- Дейтпикер конец -->
+
+{% endmacro %}
+
+
+
+
+
+{% macro RenderDateField(element) %}
+
+<!-- Дейтпикер -->
+
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+<div class="input-block js-input-datepicker">
+    <input
+            {% if element.Disabled %} disabled {% endif %}
+            class="
+                input datepicker
+                {% if element.Error %} input-error{% endif %}
+                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+            "
+            type="text"
+            name="{{ element.HashName }}"
+            value="{{ element.GetValue() }}"
+            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
+    >
+
+    <div class="error-block js-input-error" role="alert">
+        {% if element.Error %}
+            {{ element.Error }}
+        {% endif %}
+    </div>
+
+    {% if element.Description %}
+        <div class="help-block">{{ element.Description }}</div>
+    {% endif %}
+
+</div>
+<div class="clear"></div>
+<!-- Дейтпикер конец -->
+
+{% endmacro %}
+
+
+
+
+{% macro RenderMultipleSelectField(element) %}
+
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+
+<div class="input-block">
+
+    <select
+            class="
+				input selectpicker
+				{% if element.Error %} input-error{% endif %}
+            	{% if element.EisRequired %} input-warning js-input-warning{% endif %}
+			"
+            data-width="100%"
+            data-size="10"
+            data-container="body"
+            data-header="<button type='button' class='close actions-btn right js-option-reset'>Сбросить</button>"
+            title="Не выбрано..."
+            name="{{ element.HashName }}"
+            multiple="multiple"
+    {% if element.Disabled %} disabled {% endif %}>
+
+
+    {% for option in element.Options %}
+    <option value="{{ option.Value }}" {% if element.In(option.Value) %} selected {% endif %}>{{ option.Label }}</option>
+    {% endfor%}
+    </select>
+
+
+    {% if element.Error %}
+    <div class="error-block" role="alert">{{ element.Error }}</div>
+    {% endif %}
+
+    {% if element.Description %}
+    <div  class="help-block">{{ element.Description }}</div>
+    {% endif %}
+
+</div>
+<div class="clear"></div>
+
+{% endmacro %}
+
+
+
+
+{% macro RenderMultipleCheckboxField(element) %}
+	
+<div class="form-group">
+
+	{% for option in element.Options() %}
+		<div class="input-label"></div>
+		<div class="input-block">
+			<label class="checkbox-container">
+				<input
+					class="checkbox"
+					type="checkbox"
+					name="{{ element.HashName() }}[]"
+					value="{{ option.Value }}"
+					{% if element.In(option.Value) %} checked {% endif %}
+				>
+				<span>
+					<span class="checkbox__label">{{ option.Label }}</span>
+					{% if element.Description %}
+						<div class="checkbox__descr"> — {{ element.Description }}</div>
+					{% endif %}
+				</span>
+
+			</label>
+
+			{% if element.Error %}
+			<div class="error-block" role="alert">{{ element.Error }}</div>
+			{% endif %}
+
+		</div>
+		<div class="clear"></div>
+	{% endfor%}
+
+</div>
+{% endmacro %}
+
+
+
+
+
+{% macro RenderHiddenField(element) %}
+	
+<input
+	class="form-control" 
+	type="hidden"
+	tabindex="-1"
+	name="{{ element.HashName }}" realName="{{ element.Name }}"
+	value="{{ element.GetValue() }}"
+>
+
+{% if element.Error %}
+	<div class="error-block" role="alert">{{ element.Error }}</div>
+{% endif %}
+
+{% endmacro %}
+
+
+
+
+
+
+
+{% for element in form.Elements %}
+	{% if element.TplType() == "text" %}
+		{{ RenderTextField(element) }}
+		{% elif element.TplType() == "numeric" %}
+		{{ RenderTextField(element) }}
+		{% elif element.TplType() == "hidden" %}
+		{{ RenderHiddenField(element) }}
+		{% elif element.TplType() == "textarea" %}
+		{{ RenderTextareaField(element) }}
+		{% elif element.TplType() == "select" %}
+		{{ RenderSelectField(element) }}
+        {% elif element.TplType() == "checkbox" %}
+        {{ RenderCheckboxField(element) }}
+		{% elif element.TplType() == "multiple_select" %}
+		{{ RenderMultipleSelectField(element) }}
+		{% elif element.TplType() == "multiple_checkbox" %}
+		{{ RenderMultipleCheckboxField(element) }}
+		{% elif element.TplType() == "date" %}
+		{{ RenderDateField(element) }}
+		{% elif element.TplType() == "datetime" %}
+		{{ RenderDateTimeField(element) }}
+		{% elif element.TplType() == "checkbox" %}
+		{{ RenderCheckboxField(element) }}
+	{% endif %}
+{% endfor %}
+
+                        <button class="btn waves-effect waves-light blue-grey lighten-1 disableable" type="submit" name="action">Get detailed quote
+                            <i class="material-icons right">send</i>
+                        </button>
+                </div>
+            </div>
+            <div class="col s12 l8">
+                <h3><i class="material-icons left medium">pin_drop</i> Pinned blueprints</h3>
+                
+                <table class="responsive-table bordered">
+                    <tr>
+                        <th>Blueprint</th>
+                        <th>ME</th>
+                        <th>TE</th>
+                        <th>I will produce</th>
+                        <th>I will invent</th>
+                        <th>Unpin</th>
+                    </tr>
+
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <a class="valign-wrapper" href="/item/{{ item.TypeID|EncryptURL }}"><img src="/images/types/{{ item.TypeID }}_32.png" class="eve-icon">{{ item.BpoName }}</a>
+                        </td>
+                        <td>
+                            <div class="input-field col s12 l3">
+                                <select name="me_{{ item.TypeID|EncryptURL }}">
+                                    <option value="0"{% if item.ME|integer == 0%} selected{% endif %}>0%</option>
+                                    <option value="1"{% if item.ME|integer == 1%} selected{% endif %}>1%</option>
+                                    <option value="2"{% if item.ME|integer == 2%} selected{% endif %}>2%</option>
+                                    <option value="3"{% if item.ME|integer == 3%} selected{% endif %}>3%</option>
+                                    <option value="4"{% if item.ME|integer == 3%} selected{% endif %}>4%</option>
+                                    <option value="5"{% if item.ME|integer == 3%} selected{% endif %}>5%</option>
+                                    <option value="6"{% if item.ME|integer == 3%} selected{% endif %}>6%</option>
+                                    <option value="7"{% if item.ME|integer == 3%} selected{% endif %}>7%</option>
+                                    <option value="8"{% if item.ME|integer == 3%} selected{% endif %}>8%</option>
+                                    <option value="9"{% if item.ME|integer == 3%} selected{% endif %}>9%</option>
+                                    <option value="10"{% if item.ME|integer == 3%} selected{% endif %}>10%</option>
+                                </select>
+                                <label>ME</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12 l3">
+                                <select name="te_{{ item.TypeID|EncryptURL }}">
+                                    <option value="0"{% if item.ME|integer == 0%} selected{% endif %}>0%</option>
+                                    <option value="2"{% if item.ME|integer == 1%} selected{% endif %}>2%</option>
+                                    <option value="4"{% if item.ME|integer == 2%} selected{% endif %}>4%</option>
+                                    <option value="6"{% if item.ME|integer == 3%} selected{% endif %}>6%</option>
+                                    <option value="8"{% if item.ME|integer == 3%} selected{% endif %}>8%</option>
+                                    <option value="10"{% if item.ME|integer == 3%} selected{% endif %}>10%</option>
+                                    <option value="12"{% if item.ME|integer == 3%} selected{% endif %}>12%</option>
+                                    <option value="14"{% if item.ME|integer == 3%} selected{% endif %}>14%</option>
+                                    <option value="16"{% if item.ME|integer == 3%} selected{% endif %}>16%</option>
+                                    <option value="18"{% if item.ME|integer == 3%} selected{% endif %}>18%</option>
+                                    <option value="20"{% if item.ME|integer == 3%} selected{% endif %}>20%</option>
+                                </select>
+                                <label>TE</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12">
+                                <input placeholder="Leave blank to find optimal quantity" name="batch_{{ item.TypeID|EncryptURL }}" id="batch_{{ item.TypeID|EncryptURL }}" type="text" class="validate">
+                                <label class="active" for="batch_{{ item.TypeID|EncryptURL }}">Quantity</label>
+                            </div>
+                        </td>
+                        <td>
+                            <p>
+                                <input{% if item.TechLvl|integer == 1 or item.TechLvl|integer == 0 %} disabled="disabled"{% endif %} type="checkbox" id="invention_{{ item.TypeID|EncryptURL }}" name="invention_{{ item.TypeID|EncryptURL }}" />
+                                <label for="invention_{{ item.TypeID|EncryptURL }}">Yes</label>
+                            </p>
+                        </td>
+                        <td>
+                            <a href="#" class="button-link my-blueprints-control" data-typeid="{{ item.TypeID|EncryptURL }}" onclick="rowDel();"><i class="material-icons grey-text text-darken-1" title="Pin it!">pin_drop</i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+    <br><br>
+
+                <div id="sbm-progress" style="display: none;">
+                    Might need to gather some data from EVE servers, please be patient
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+
+
+                <button class="btn waves-effect waves-light blue-grey lighten-1 right disableable" type="submit" name="action">Get detailed quote
+                    <i class="material-icons right">send</i>
+                </button>
+
+                
+            </div>
+            <div class="col s12 l2">
+                banner
+            </div>
+            </form>
+		</div>
+
+        
+        <script>
+
+            $(document).ready(function(){
+
+                $("#report-form").on('submit', function(e){
+                    $("#sbm-progress").show();
+                    $(".disableable").attr("disabled", "disabled");
+                });
+            });
+
+            var rowDel = function(){
+                $(this).parentElement.parentElement.remove();
+            }
+        </script>
+        
+
+
+
+<footer class="page-footer blue-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col l4 s12">
+                <h5>
+                    Help EIMA Grow
+                </h5>
+                <p>We hope you have enjoyed using EIMA and it helped you somehow. If you feel like you want to support us then you can help us by donating some ISK ingame to the character Ace Ruffian. Any donation could help supporting this project and would be greatly appreciated.</p>
+            </div>
+            <div class="col l4 s12">
+                <h5>
+                    Connect
+                </h5>
+                <a href="https://www.fuzzwork.co.uk/dump/" class="white-text">EVE SDE Dump by fuzzwork.co.uk</a><br>
+                <iframe src="https://ghbtns.com/github-btn.html?user=aehler&repo=weasel&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+            </div>
+            <div class="col l4 s12">
+                <h5>
+                    Cookies
+                </h5>
+                <p>This website use cookies for essential purposes. Such as auto login and analytics. We use cookies in order to give you the best experience possible.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row">
+            &copy;&nbsp;2018 EVE INDUSTRY MARKET ANALYZER, All rights reserved.
+            <br><br>
+            EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. All other trademarks are the property of their respective owners. EVE Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of CCP hf. CCP is in no way responsible for the content on or functioning of this website, nor can it be liable for any damage arising from the use of this website.
+        </div>
+    </div>
+</footer>
+
+
+
+<ul id="slide-out" class="side-nav grey lighten-5">
+    <li><div class="user-view">
+    {% if currentUser.UserID == 0 %}
+        <span class="blue-text"><i class="material-icons medium">person</i></span>
+        <span class="blue-text name"><a href="/login/"><img src="/assets/images/EVE_SSO_Login_Buttons_Small_White.png"></a></span>
+    {% else %}
+        <div class="background">
+            <img src="https://imageserver.eveonline.com/Character/{{ currentUser.UserID }}_512.jpg" width="300">
+        </div>
+        <div style="height: 270px;"></div>
+        <h5 class="blue-text">{{ currentUser.UserLastName }}</h5>
+        <span class="blue-text name"><a href="/login/"><img src="/assets/images/EVE_SSO_Login_Buttons_Small_White.png"></a></span>
+    {% endif %}
+    </div></li>
+    <li><div class="divider"></div></li>
+    <li>
+        <div class="row">
+            <div class="col l1 s12"></div>
+            <div class="col l10 s12">
+            <form id="settings-form" autocomplete="off">
+                <h5 class="grey-text">Settings</h5>
+                <div class="input-field">
+                    <input id="region" type="text" class="autocomplete" name="region" autocomplete="off" value="{{ userSettings.Region }}">
+                    <input name="regionID" id="regionID" value="{{ userSettings.RegionID }}" type="hidden" autocomplete="off" />
+                    <label for="region">Region</label>
+                </div>
+                <div class="input-field">
+                    <input name="settings-pi" id="settings-pi" value="{{ userSettings.MarketShare }}" type="text" autocomplete="off" />
+                    <label for="settings-pi">Market share, %</label>
+                </div>
+                <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" id="settings-submit">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+            </div>
+            <div class="col l1 s12"></div>
+        </div>
+    </li>
+</ul>
+
+
+
+
+</body>
+</html>

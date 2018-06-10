@@ -1,0 +1,25 @@
+
+{% macro RenderSelectFieldFilter(element) %}
+
+<div class="filter__label js-filter__label">
+    {{ element.Label }}
+</div>
+
+<div class="filter__input">
+    <select class="input selectpicker blue"
+            data-width="100%"
+            data-live-search="true"
+            data-header="<button type='button' class='close actions-btn right js-option-reset'>Сбросить</button>"
+            data-size="10"
+            title="Не выбрано..."
+            name="{{ element.HashName }}"
+            realname="{{ element.Name }}"
+            {% if element.Disabled %} disabled {% endif %}>
+        {% for option in element.Options() %}
+            <option value="{{ option.Value }}" {% if element.In(option.Value) %} selected {% endif %}>{{ option.Label }}</option>
+        {% endfor%}
+    </select>
+</div>
+
+{% endmacro %}
+

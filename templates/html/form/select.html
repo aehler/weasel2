@@ -1,0 +1,21 @@
+
+{% macro RenderSelectField(element) %}
+<div class="row">
+	<div class="input-field col s12">
+
+		<select
+				name="{{ element.HashName }}"
+		>
+			{% for option in element.Options %}
+			<option value="{{ option.Value }}" {% if element.GetValue()|integer == option.Value|integer %} selected {% endif %}>{{ option.Label }}</option>
+			{% endfor%}
+		</select>
+
+		<label>{{ element.Label }}
+			{% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+{% endmacro %}
+

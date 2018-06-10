@@ -1,0 +1,46 @@
+
+{% macro RenderMultipleSelectField(element) %}
+
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+
+<div class="input-block">
+
+    <select
+            class="
+				input selectpicker
+				{% if element.Error %} input-error{% endif %}
+            	{% if element.EisRequired %} input-warning js-input-warning{% endif %}
+			"
+            data-width="100%"
+            data-size="10"
+            data-container="body"
+            data-header="<button type='button' class='close actions-btn right js-option-reset'>Сбросить</button>"
+            title="Не выбрано..."
+            name="{{ element.HashName }}"
+            multiple="multiple"
+    {% if element.Disabled %} disabled {% endif %}>
+
+
+    {% for option in element.Options %}
+    <option value="{{ option.Value }}" {% if element.In(option.Value) %} selected {% endif %}>{{ option.Label }}</option>
+    {% endfor%}
+    </select>
+
+
+    {% if element.Error %}
+    <div class="error-block" role="alert">{{ element.Error }}</div>
+    {% endif %}
+
+    {% if element.Description %}
+    <div  class="help-block">{{ element.Description }}</div>
+    {% endif %}
+
+</div>
+<div class="clear"></div>
+
+{% endmacro %}
+
+

@@ -1,0 +1,39 @@
+
+
+{% macro RenderDateTimeRangeField(element) %}
+
+    <div class="filter__label js-filter__label">
+        {{ element.Label }}
+        {% if element.Required %}<span> *</span>{% endif %}
+    </div>
+
+    <div class="filter__input">
+        <div class="input-wrapper">
+            <input class="input input_w_100p datetimepicker"
+                   type="text"
+                   name="{{ element.HashName }}"
+                   value="{{ element.GetIndexedValue(0) }}"
+                   data-rome-id="{{ element.HashName }}0"
+                   placeholder="Дата и время с.."
+                    >
+        </div>
+
+        <div class="input-wrapper">
+            <input class="input input_w_100p datetimepicker"
+                   type="text"
+                   name="{{ element.HashName }}"
+                   value="{{ element.GetIndexedValue(1) }}"
+                   data-rome-id="{{ element.HashName }}1"
+                   placeholder="Дата и время до.."
+                    >
+        </div>
+
+        {% if element.Error %}
+        <div class="error-block" role="alert">{{ element.Error }}</div>
+        {% endif %}
+    </div>
+
+
+{% endmacro %}
+
+

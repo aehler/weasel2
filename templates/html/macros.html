@@ -1,0 +1,38 @@
+
+
+{% macro RenderSubMatRows(component, componentLpath, materials) %}
+
+    {% for m in materials %}
+
+        {% if m.BpoID == component and m.LPath.In(componentLpath) %}
+
+            <tr{% if m.ComponentBPO != 0 and m.LPath.In(componentLpath) %} class="no-border"{% endif %}>
+                <td style="padding-left: {{ 10 * m.Lvl }}px;" class="valign-wrapper">
+                    {% if m.ComponentBPO != 0 %}
+                        <a class="valign-wrapper" href="/item/{{ m.ComponentBPO|EncryptURL }}">
+                            <img src="/images/types/{{ m.MaterialID }}_32.png" class="eve-icon"> {{ m.MaterialName }}
+                        </a>
+                    {% else %}
+                        <img src="/images/types/{{ m.MaterialID }}_32.png" class="eve-icon"> {{ m.MaterialName }}
+                    {% endif %}
+                </td>
+                <td>{{ m.Quantity|FormatPrice }}</td>
+                <td>{{ m.AvgPrice|FormatPrice }}</td>
+                <td>{{ m.Cost|FormatPrice }}</td>
+                <td>{{ m.TotalVolume|FormatPrice }}</td>
+                <td>{% if m.ComponentBPO != 0 %}{{ m.ActivityName }}{% endif %}</td>
+            </tr>
+
+            {% if m.ComponentBPO != 0 and m.LPath.In(componentLpath) %}
+
+                {{ RenderSubMatRows(m.ComponentBPO, m.LPath, materials) }}
+
+            {% endif %}
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endmacro %}
+
+

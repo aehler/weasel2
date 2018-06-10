@@ -1,0 +1,29 @@
+
+{% if paginator.TotalPages > 1 %}
+
+<ul class="pagination">
+
+	{% if paginator.Prev %}
+		<li class="waves-effect"><a href="{{ paginator.Prev }}"><i class="material-icons">chevron_left</i></a></li>
+	{% else %}
+    	<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+	{% endif %}
+
+    {% for page in paginator.List %}
+    {% if page.Current %}
+	<li class="active blue-grey"><a href="#!">{{ page.Number }}</a></li>
+    {% else %}
+	<li class="waves-effect"><a href="{{ page.URL }}">{{ page.Number }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+	{% if paginator.Next %}
+		<li class="waves-effect"><a href="{{ paginator.Next }}"><i class="material-icons">chevron_right</i></a></li>
+	{% else %}
+    	<li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+	{% endif %}
+
+</ul>
+
+{% endif %}
+

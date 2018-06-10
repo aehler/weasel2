@@ -1,0 +1,28 @@
+
+{% macro RenderTextField(element) %}
+
+<div class="row">
+    <div class="input-field col s12">
+
+        <input  {% if element.Disabled %} disabled {% endif %}
+				id="{{ element.HashName }}"
+                class=""
+                {% if element.TplType() == "numeric" %}
+                type="number"
+                {% else %}
+                type="text"
+                {% endif %}
+                name="{{ element.HashName }}"
+                value="{{ element.GetValue() }}"
+                placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+        >
+		<label for="{{ element.HashName }}">{{ element.Label }}
+            {% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+
+{% endmacro %}
+
+

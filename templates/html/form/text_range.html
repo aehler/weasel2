@@ -1,0 +1,27 @@
+
+{% macro RenderTextRangeField(element) %}
+
+    <div class="filter__label js-filter__label">{{ element.Label }}</div>
+
+    <div class="filter__input">
+        <div class="input-wrapper">
+            <input type="text"
+                   class="input input_w_100p"
+                   name="{{ element.HashName }}"
+                   value="{{ element.GetIndexedValue(0) }}"
+                   placeholder="Мин. {% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+                    >
+        </div>
+        <div class="input-wrapper">
+            <input type="text"
+                   class="input input_w_100p"
+                   name="{{ element.HashName }}"
+                   value="{{ element.GetIndexedValue(1) }}"
+                   placeholder="Макс. {% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+                    >
+        </div>
+    </div>
+
+
+{% endmacro %}
+

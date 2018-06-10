@@ -1,0 +1,326 @@
+
+{% macro RenderTextField(element) %}
+
+<div class="row">
+    <div class="input-field col s12">
+
+        <input  {% if element.Disabled %} disabled {% endif %}
+				id="{{ element.HashName }}"
+                class=""
+                {% if element.TplType() == "numeric" %}
+                type="number"
+                {% else %}
+                type="text"
+                {% endif %}
+                name="{{ element.HashName }}"
+                value="{{ element.GetValue() }}"
+                placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+        >
+		<label for="{{ element.HashName }}">{{ element.Label }}
+            {% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+
+{% endmacro %}
+
+
+
+
+
+{% macro RenderTextareaField(element) %}
+
+	<div class="input-label{% if element.Error %} has-error{% endif %}">
+		{{ element.Label }}
+		{% if element.Required %}<span> *</span>{% endif %}
+	</div>
+	<div class="input-block">
+		<textarea name="{{ element.HashName }}"
+				  rows="3"
+				  {% if element.Disabled %} disabled {% endif %}
+				  placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+				  class="
+					  input
+					  {% if element.Error %} input-error{% endif %}
+					  {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+				  "
+		>{{ element.GetValue() }}</textarea>
+
+		{% if element.Error %}
+			<div class="error-block" role="alert">{{ element.Error }}</div>
+		{% endif %}
+
+		{% if element.Description %}
+			<div class="help-block">{{ element.Description }}</div>
+		{% endif %}
+	</div>
+	<div class="clear"></div>
+
+{% endmacro %}
+
+
+
+
+{% macro RenderSelectField(element) %}
+<div class="row">
+	<div class="input-field col s12">
+
+		<select
+				name="{{ element.HashName }}"
+		>
+			{% for option in element.Options %}
+			<option value="{{ option.Value }}" {% if element.GetValue()|integer == option.Value|integer %} selected {% endif %}>{{ option.Label }}</option>
+			{% endfor%}
+		</select>
+
+		<label>{{ element.Label }}
+			{% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+{% endmacro %}
+
+
+
+{% macro RenderCheckboxField(element) %}
+
+
+<p>
+    <input {% if element.Disabled %} disabled {% endif %}
+            id="{{ element.HashName }}"
+            type="checkbox"
+            name="{{ element.HashName }}"
+            value="1"
+            {% if element.Value %} checked {% endif %}
+    >
+    <label for="{{ element.HashName }}">{{ element.Label }}
+        {% if element.Required %}<span> *</span>{% endif %}
+    </label>
+</p>
+
+{% endmacro %}
+
+
+
+
+
+{% macro RenderDateTimeField(element) %}
+
+<!-- Дейтпикер -->
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+<div class="input-block js-input-datepicker">
+    <input
+            {% if element.Disabled %} disabled {% endif %}
+            class="
+                input datetimepicker
+                {% if element.Error %} input-error{% endif %}
+                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+            "
+            type="text"
+            name="{{ element.HashName }}"
+    {% if element.GetValue() %}
+            value="{{ element.GetValue() }}"
+    {% else %}
+            value=""
+    {% endif %}
+            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
+    >
+
+    <div class="error-block js-input-error" role="alert">
+        {% if element.Error %}
+            {{ element.Error }}
+        {% endif %}
+    </div>
+
+    {% if element.Description %}
+    <div class="help-block">{{ element.Description }}</div>
+    {% endif %}
+</div>
+<div class="clear"></div>
+<!-- Дейтпикер конец -->
+
+{% endmacro %}
+
+
+
+
+
+{% macro RenderDateField(element) %}
+
+<!-- Дейтпикер -->
+
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+<div class="input-block js-input-datepicker">
+    <input
+            {% if element.Disabled %} disabled {% endif %}
+            class="
+                input datepicker
+                {% if element.Error %} input-error{% endif %}
+                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
+            "
+            type="text"
+            name="{{ element.HashName }}"
+            value="{{ element.GetValue() }}"
+            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
+    >
+
+    <div class="error-block js-input-error" role="alert">
+        {% if element.Error %}
+            {{ element.Error }}
+        {% endif %}
+    </div>
+
+    {% if element.Description %}
+        <div class="help-block">{{ element.Description }}</div>
+    {% endif %}
+
+</div>
+<div class="clear"></div>
+<!-- Дейтпикер конец -->
+
+{% endmacro %}
+
+
+
+
+{% macro RenderMultipleSelectField(element) %}
+
+<div class="input-label{% if element.Error %} has-error{% endif %}">
+    {{ element.Label }}
+    {% if element.Required %}<span> *</span>{% endif %}
+</div>
+
+<div class="input-block">
+
+    <select
+            class="
+				input selectpicker
+				{% if element.Error %} input-error{% endif %}
+            	{% if element.EisRequired %} input-warning js-input-warning{% endif %}
+			"
+            data-width="100%"
+            data-size="10"
+            data-container="body"
+            data-header="<button type='button' class='close actions-btn right js-option-reset'>Сбросить</button>"
+            title="Не выбрано..."
+            name="{{ element.HashName }}"
+            multiple="multiple"
+    {% if element.Disabled %} disabled {% endif %}>
+
+
+    {% for option in element.Options %}
+    <option value="{{ option.Value }}" {% if element.In(option.Value) %} selected {% endif %}>{{ option.Label }}</option>
+    {% endfor%}
+    </select>
+
+
+    {% if element.Error %}
+    <div class="error-block" role="alert">{{ element.Error }}</div>
+    {% endif %}
+
+    {% if element.Description %}
+    <div  class="help-block">{{ element.Description }}</div>
+    {% endif %}
+
+</div>
+<div class="clear"></div>
+
+{% endmacro %}
+
+
+
+
+{% macro RenderMultipleCheckboxField(element) %}
+	
+<div class="form-group">
+
+	{% for option in element.Options() %}
+		<div class="input-label"></div>
+		<div class="input-block">
+			<label class="checkbox-container">
+				<input
+					class="checkbox"
+					type="checkbox"
+					name="{{ element.HashName() }}[]"
+					value="{{ option.Value }}"
+					{% if element.In(option.Value) %} checked {% endif %}
+				>
+				<span>
+					<span class="checkbox__label">{{ option.Label }}</span>
+					{% if element.Description %}
+						<div class="checkbox__descr"> — {{ element.Description }}</div>
+					{% endif %}
+				</span>
+
+			</label>
+
+			{% if element.Error %}
+			<div class="error-block" role="alert">{{ element.Error }}</div>
+			{% endif %}
+
+		</div>
+		<div class="clear"></div>
+	{% endfor%}
+
+</div>
+{% endmacro %}
+
+
+
+
+
+{% macro RenderHiddenField(element) %}
+	
+<input
+	class="form-control" 
+	type="hidden"
+	tabindex="-1"
+	name="{{ element.HashName }}" realName="{{ element.Name }}"
+	value="{{ element.GetValue() }}"
+>
+
+{% if element.Error %}
+	<div class="error-block" role="alert">{{ element.Error }}</div>
+{% endif %}
+
+{% endmacro %}
+
+
+
+
+
+
+
+{% for element in form.Elements %}
+	{% if element.TplType() == "text" %}
+		{{ RenderTextField(element) }}
+		{% elif element.TplType() == "numeric" %}
+		{{ RenderTextField(element) }}
+		{% elif element.TplType() == "hidden" %}
+		{{ RenderHiddenField(element) }}
+		{% elif element.TplType() == "textarea" %}
+		{{ RenderTextareaField(element) }}
+		{% elif element.TplType() == "select" %}
+		{{ RenderSelectField(element) }}
+        {% elif element.TplType() == "checkbox" %}
+        {{ RenderCheckboxField(element) }}
+		{% elif element.TplType() == "multiple_select" %}
+		{{ RenderMultipleSelectField(element) }}
+		{% elif element.TplType() == "multiple_checkbox" %}
+		{{ RenderMultipleCheckboxField(element) }}
+		{% elif element.TplType() == "date" %}
+		{{ RenderDateField(element) }}
+		{% elif element.TplType() == "datetime" %}
+		{{ RenderDateTimeField(element) }}
+		{% elif element.TplType() == "checkbox" %}
+		{{ RenderCheckboxField(element) }}
+	{% endif %}
+{% endfor %}

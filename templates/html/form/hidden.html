@@ -1,0 +1,18 @@
+
+{% macro RenderHiddenField(element) %}
+	
+<input
+	class="form-control" 
+	type="hidden"
+	tabindex="-1"
+	name="{{ element.HashName }}" realName="{{ element.Name }}"
+	value="{{ element.GetValue() }}"
+>
+
+{% if element.Error %}
+	<div class="error-block" role="alert">{{ element.Error }}</div>
+{% endif %}
+
+{% endmacro %}
+
+
