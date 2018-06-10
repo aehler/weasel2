@@ -112,7 +112,7 @@ func errors404Html() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "errors/404.html", size: 3270, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "errors/404.html", size: 3270, mode: os.FileMode(436), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -132,7 +132,7 @@ func errors500Html() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "errors/500.html", size: 3326, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "errors/500.html", size: 3326, mode: os.FileMode(436), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -152,7 +152,7 @@ func formCheckboxHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/checkbox.html", size: 455, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/checkbox.html", size: 455, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -172,7 +172,7 @@ func formDateHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/date.html", size: 1123, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/date.html", size: 1123, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -192,7 +192,7 @@ func formDatetimeHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/datetime.html", size: 1209, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/datetime.html", size: 1209, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -212,7 +212,7 @@ func formDatetime_rangeHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/datetime_range.html", size: 1173, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/datetime_range.html", size: 1173, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -232,7 +232,7 @@ func formForeachHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/foreach.html", size: 8312, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/foreach.html", size: 8312, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -252,7 +252,7 @@ func formForeach_groupHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/foreach_group.html", size: 8251, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/foreach_group.html", size: 8251, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -272,7 +272,7 @@ func formHiddenHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/hidden.html", size: 318, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/hidden.html", size: 318, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -292,7 +292,7 @@ func formMultiple_checkboxHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/multiple_checkbox.html", size: 813, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/multiple_checkbox.html", size: 813, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -312,7 +312,7 @@ func formMultiple_selectHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/multiple_select.html", size: 1279, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/multiple_select.html", size: 1279, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -332,7 +332,7 @@ func formMultiple_select_filterHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/multiple_select_filter.html", size: 861, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/multiple_select_filter.html", size: 861, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -352,7 +352,7 @@ func formSelectHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/select.html", size: 483, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/select.html", size: 483, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -372,7 +372,7 @@ func formSelect_filterHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/select_filter.html", size: 832, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/select_filter.html", size: 832, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -392,7 +392,7 @@ func formTextHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/text.html", size: 754, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/text.html", size: 754, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -412,7 +412,7 @@ func formText_rangeHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/text_range.html", size: 916, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/text_range.html", size: 916, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -432,7 +432,7 @@ func formTextareaHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "form/textarea.html", size: 892, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "form/textarea.html", size: 892, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -452,7 +452,7 @@ func indexHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "index.html", size: 22073, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "index.html", size: 22073, mode: os.FileMode(436), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -472,7 +472,7 @@ func itemGeneralHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "item-general.html", size: 12124, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "item-general.html", size: 12124, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -492,7 +492,7 @@ func itemManufacturingHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "item-manufacturing.html", size: 19119, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "item-manufacturing.html", size: 19119, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -512,7 +512,7 @@ func itemResearchHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "item-research.html", size: 14668, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "item-research.html", size: 14668, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -532,7 +532,7 @@ func itemHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "item.html", size: 10142, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "item.html", size: 10142, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -592,7 +592,7 @@ func macrosHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "macros.html", size: 1401, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "macros.html", size: 1401, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -612,7 +612,7 @@ func marketHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "market.html", size: 14845, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "market.html", size: 14845, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -632,7 +632,7 @@ func myBlueprintsReportHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "my-blueprints-report.html", size: 15325, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "my-blueprints-report.html", size: 15325, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -652,7 +652,7 @@ func myBlueprintsHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "my-blueprints.html", size: 22084, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "my-blueprints.html", size: 22084, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -672,7 +672,7 @@ func paginatorHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "paginator.html", size: 847, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "paginator.html", size: 847, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -692,7 +692,7 @@ func timelineHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "timeline.html", size: 11039, mode: os.FileMode(420), modTime: time.Unix(1520508540, 0)}
+	info := bindataFileInfo{name: "timeline.html", size: 11039, mode: os.FileMode(420), modTime: time.Unix(1528644837, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }

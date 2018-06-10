@@ -2,220 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="268faf11-2d12-4f97-8778-f429808334eb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/custom.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/icons.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/materialize.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/materialize.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Bold.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Bold.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Light.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Light.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Medium.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Medium.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Thin.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/fonts/roboto/Roboto-Thin.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-1920x1080.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-404-1920x1080.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-500-1920x1080.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/backgrounds-rtr-1920x1080.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/images/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/custom.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/jquery-3.3.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/materialize.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/js/materialize.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/filters.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/jsonRPC/client.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/jsonRPC/types.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/current_page.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/limiter.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/paginator.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/paginator/paginator_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/common/append.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/common/oauth.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/common/route.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/index/item.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/index/market.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/index/timeline.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/personal/my_blueprints.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/personal/route.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/helper/format_number.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/helper/num_in_words.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/helper/round.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/common/init.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/common/types.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/common/user_settings.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/character_client.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/init.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/market_client.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/request/character_skills.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/request/market_history.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/request/market_prices.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/character_skills.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/market_history.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/market_prices.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/esi/response/types.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/SQL/schema.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/decryptors.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/filter.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/index.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/item.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/mats.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/skills.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/items/timeline.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/market/SQL/schema.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/market/init.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/market/market.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/init.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/pinned_bpos.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/prod_line_attributes.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/personal/report.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/scheduler/init.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/scheduler/local_data.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lib/scheduler/market.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/middleware/user_settings/user_settings.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/checkbox.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/date.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/datetime.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/datetime_range.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/foreach.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/foreach_group.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/hidden.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/multiple_checkbox.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/multiple_select.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/multiple_select_filter.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/select.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/select_filter.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/text.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/text_range.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/form/textarea.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item-general.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item-manufacturing.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item-research.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/item.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/macros.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/market.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/my-blueprints-report.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/my-blueprints.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/paginator.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/src/timeline.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/css/api.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/css/highcharts.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/css/jquery-ui.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/css/jquery.sidr.bare.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ArmsRace_1.0_Icons.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Highcharts.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-114x114.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-120x120.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-144x144.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-152x152.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-180x180.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-57x57.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-60x60.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-72x72.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/apple-touch-icon-76x76.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon-160x160.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon-16x16.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon-192x192.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon-32x32.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon-96x96.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprite.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/srm-cpl-icon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/js/highcharts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/js/jquery-3.1.1.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/js/jquery.simple.websocket.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/js/monitor.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/avocado.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/avocado.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/avocado.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-blue.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-blue.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-blue.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-green.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-green.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-green.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-unica.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-unica.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/dark-unica.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/gray.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/gray.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/gray.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/grid-light.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/grid-light.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/grid-light.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/grid.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/grid.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/grid.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/sand-signika.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/sand-signika.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/sand-signika.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/skies.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/skies.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/skies.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/sunset.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/sunset.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/sunset.src.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/conf.d/config.yml" afterPath="$PROJECT_DIR$/conf.d/config.yml" />
-      <change beforePath="$PROJECT_DIR$/conf.d/pushover.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
-      <change beforePath="$PROJECT_DIR$/server.go" afterPath="$PROJECT_DIR$/server.go" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/bin/monitor" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/app/bindata/assets/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/assets/a.go" />
       <change beforePath="$PROJECT_DIR$/src/app/bindata/templates/a.go" afterPath="$PROJECT_DIR$/src/app/bindata/templates/a.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/context.go" afterPath="$PROJECT_DIR$/src/app/context.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/crypto/ecnrypt.go" afterPath="$PROJECT_DIR$/src/app/crypto/ecnrypt.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/elements.go" afterPath="$PROJECT_DIR$/src/app/form/elements.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/form.go" afterPath="$PROJECT_DIR$/src/app/form/form.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/mapper.go" afterPath="$PROJECT_DIR$/src/app/form/mapper.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/types.go" afterPath="$PROJECT_DIR$/src/app/form/types.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/registry/cfg.go" afterPath="$PROJECT_DIR$/src/app/registry/cfg.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/registry/path.go" afterPath="$PROJECT_DIR$/src/app/registry/path.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/registry/registry.go" afterPath="$PROJECT_DIR$/src/app/registry/registry.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/server.go" afterPath="$PROJECT_DIR$/src/app/server.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/session/memcached_client.go" afterPath="$PROJECT_DIR$/src/app/session/memcached_client.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/session/session.go" afterPath="$PROJECT_DIR$/src/app/session/session.go" />
-      <change beforePath="$PROJECT_DIR$/src/app/templates.go" afterPath="$PROJECT_DIR$/src/app/templates.go" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index/common.go" afterPath="$PROJECT_DIR$/src/controller/index/common.go" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index/logs.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index/route.go" afterPath="$PROJECT_DIR$/src/controller/index/route.go" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index/ws.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth/user.go" afterPath="$PROJECT_DIR$/src/lib/auth/user.go" />
-      <change beforePath="$PROJECT_DIR$/src/lib/logs/init.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/logs/mgo_logs.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/logs/sqlx_logs.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/logs/types.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notifies/init.go" afterPath="$PROJECT_DIR$/src/lib/items/init.go" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notifies/pushover.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notifies/ws.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/stats/cpu_times.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/stats/init.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/stats/pids.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/stats/ps_stats.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/cpu_limit.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/init.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/mem_limit.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/restart_service.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/service_down.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/triggers.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/lib/triggers/types.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/auth/auth.go" afterPath="$PROJECT_DIR$/src/middleware/auth/auth.go" />
-      <change beforePath="$PROJECT_DIR$/templates/html/errors/404.html" afterPath="$PROJECT_DIR$/templates/html/errors/404.html" />
-      <change beforePath="$PROJECT_DIR$/templates/html/errors/500.html" afterPath="$PROJECT_DIR$/templates/html/errors/500.html" />
-      <change beforePath="$PROJECT_DIR$/templates/html/index.html" afterPath="$PROJECT_DIR$/templates/html/index.html" />
-      <change beforePath="$PROJECT_DIR$/templates/src/errors/404.html" afterPath="$PROJECT_DIR$/templates/src/errors/404.html" />
-      <change beforePath="$PROJECT_DIR$/templates/src/errors/500.html" afterPath="$PROJECT_DIR$/templates/src/errors/500.html" />
-      <change beforePath="$PROJECT_DIR$/templates/src/index.html" afterPath="$PROJECT_DIR$/templates/src/index.html" />
-      <change beforePath="$PROJECT_DIR$/templates/src/layout.html" afterPath="$PROJECT_DIR$/templates/src/layout.html" />
-      <change beforePath="$PROJECT_DIR$/templates/src/log-entry.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/src/log-list.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lib/personal/report.go" afterPath="$PROJECT_DIR$/src/lib/personal/report.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -226,31 +18,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="report.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/personal/report.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="324" column="22" lean-forward="false" selection-start-line="324" selection-start-column="22" selection-end-line="324" selection-end-column="22" />
+            <state relative-caret-position="600">
+              <caret line="343" column="9" lean-forward="false" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+              <folding>
+                <element signature="e#18#135#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/items/timeline.go">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="120">
+              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my-blueprints-report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/src/my-blueprints-report.html">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf.d/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="79" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -313,7 +127,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="industry-market" />
       </map>
     </option>
   </component>
@@ -327,7 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/server.go" />
         <option value="$PROJECT_DIR$/src/app/registry/cfg.go" />
         <option value="$PROJECT_DIR$/src/app/registry/registry.go" />
         <option value="$PROJECT_DIR$/src/lib/auth/user.go" />
@@ -378,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/lib/items/item.go" />
         <option value="$PROJECT_DIR$/templates/src/my-blueprints-report.html" />
         <option value="$PROJECT_DIR$/src/lib/personal/report.go" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -425,7 +239,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -436,83 +249,11 @@
             <path>
               <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
               <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="conf.d" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
               <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="scheduler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
-              <item name="user_settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weasel2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weasel2" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -520,6 +261,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,9 +305,9 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1969" y="-4" width="1871" height="1084" extended-state="6" />
+    <frame x="1968" y="-11" width="1873" height="1092" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26356164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23232877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -587,8 +329,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="++" />
+    <option name="LAST_COMMIT_MESSAGE" value="++" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -597,49 +354,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lib/notifies/init.go" />
-    <entry file="file://$PROJECT_DIR$/src/lib/common/types.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/items/filter.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/form/elements.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/src/form/text.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/form/types.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/form/mapper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/esi/character_client.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -756,7 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="108" column="80" lean-forward="false" selection-start-line="108" selection-start-column="80" selection-end-line="108" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/scheduler/local_data.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -897,9 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#15#56#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,7 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,14 +645,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/personal/report.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="324" column="22" lean-forward="false" selection-start-line="324" selection-start-column="22" selection-end-line="324" selection-end-column="22" />
+        <state relative-caret-position="600">
+          <caret line="343" column="9" lean-forward="false" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+          <folding>
+            <element signature="e#18#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.d/storage.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.d/classifiers.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.d/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -10,7 +10,6 @@ import (
 	"app/crypto"
 	"helper"
 	"math"
-	"fmt"
 )
 
 type PReport struct {
@@ -345,10 +344,10 @@ func PinnedReport(user *auth.User, pinned PinnedBPOs, settings common.UserSettin
 		}
 
 		//Timing part
-		tl, err := items.ProductionTimeline(it.TypeID, settings.RegionID, r.PlannedBatch, user)
-		if err != nil {
-			return res, err
-		}
+		//tl, err := items.ProductionTimeline(it.TypeID, settings.RegionID, r.PlannedBatch, user)
+		//if err != nil {
+		//	return res, err
+		//}
 
 		res.Items = append(res.Items, r)
 
