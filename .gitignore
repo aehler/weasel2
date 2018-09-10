@@ -26,6 +26,6 @@ target/
 
 bin/
 
-.idea/
+.idea
 calendar.json
 cert
