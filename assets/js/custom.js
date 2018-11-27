@@ -2,6 +2,13 @@ $(document).ready(function() {
 
     $('.tooltipped').tooltip({delay: 10});
 
+    //$('.dropdown-trigger').dropdown();
+
+    $('.form-sender').click(function (e){
+        e.preventDefault();
+        formSender({});
+    });
+
     $('.parallax').parallax();
 
     $("#settings-menu").sideNav();
@@ -353,3 +360,32 @@ function formatDuration (seconds) {
         return "now"
     }
 }
+
+formSender = function(options){
+
+    var defaults = {
+        ajaxUrl:"",
+        data: {},
+        classSender: "form-sender",
+        callback: function () {}
+    };
+
+    options = $.extend(defaults, options);
+
+    var $control = $("." + options.classSender);
+    var $form = $control.parents('form').eq(0);
+
+    $.ajax({
+        type: 'POST',
+        url: $form.attr('action'),
+        data: $form.serializeArray(),
+        success: function (data) {
+            if (!data.success) {
+                Materialize.toast('Ошибка: <span class="red-text lighten-2" style="margin-left: 5px">' + data.error + '</span>', 4000)
+            } else {
+                options.callback();
+            }
+        }
+    });
+
+};

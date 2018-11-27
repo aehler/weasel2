@@ -7,6 +7,8 @@ import (
 	"encoding/json"
 	"sync"
 	"time"
+	"fmt"
+	"runtime/debug"
 )
 
 type Context struct {
@@ -54,6 +56,16 @@ func (c *Context) Get(key string) interface{} {
 }
 
 func (c *Context) run() {
+
+
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered panic:", r)
+			debug.PrintStack()
+			c.WriteHeader(http.StatusInternalServerError)
+			c.Write([]byte(fmt.Sprintf("%v", r)))
+		}
+	}()
 
 	go func() {
 

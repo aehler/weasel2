@@ -19,6 +19,10 @@ func Init(mg string, sst int32) (*SessionStorage) {
 		SStimeout: sst,
 	}
 
+	if err := s.Upsert("Runtime_start", time.Now().String()); err != nil {
+		panic(err.Error())
+	}
+
 	return s
 }
 

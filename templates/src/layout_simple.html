@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>qube - автоматизация в облаке</title>
+
+    <link href="/assets/css/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css" type="text/css" media="screen,projection" />
+    <link rel="stylesheet" href="/assets/css/custom.css?{{randJS}}" type="text/css" media="screen,projection" />
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/custom.js?{{randJS}}"></script>
+</head>
+
+<body>
+
+<nav class="light-blue darken-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">qube</a>
+    </div>
+
+</nav>
+
+
+{% verbatim %}
+
+{% endverbatim %}
+
+{% block content %}{% endblock %}
+
+{% include "footer.html" %}
+</body>
+</html>

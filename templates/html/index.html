@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-	<title>EVE INDUSTRY MARKET ANALYZER</title>
+	<title>qube - автоматизация в облаке</title>
 
 	<link href="/assets/css/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/materialize.min.css" type="text/css" media="screen,projection" />
@@ -12,14 +12,14 @@
 	<script src="/assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="/assets/js/custom.js"></script>
 </head>
-<body class="grey lighten-5 grey-text text-darken-4">
+<body class="white grey-text text-darken-4">
 
-<nav class="blue-grey" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">EIMA</a>
+<nav class="light-blue darken-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">qube</a>
 
         <ul class="right hide-on-med-and-down">
-            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Settings</a></li>
-            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Pinned Blueprints 
+            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Персонализация</a></li>
+            <li><a href="/favorites/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Мои документы 
 
                 {% if pinnedBPOCount|integer > 0 %}
                     <span class="new badge orange" data-badge-caption="">{{ pinnedBPOCount|integer }}</span>
@@ -29,8 +29,8 @@
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
-            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Settings</a></li>
-            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Pinned Blueprints 
+            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Персонализация</a></li>
+            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Мои документы 
 
                 {% if pinnedBPOCount|integer > 0 %}
                 <span id="pinned-count" class="new badge orange" data-badge-caption="">{{ pinnedBPOCount|integer }}</span>
@@ -41,429 +41,39 @@
     </div>
 
 </nav>
-
-<div class="row">
-    <div class="container col s12 l6 right">
-        <div class="input-field col s8 inline left">
-            <i class="material-icons prefix" id="search-btn">search</i>
-            <input id="search" type="text" name="searchText" class="grey-text" value="{{ search }}">
-            <label for="search">Search</label>
-        </div>
-    </div>
-</div>
-
+<nav class="light-blue darken-4" role="navigation">
+    <ul class="left hide-on-med-and-down">
+        <li><a href="/dashboard/">Рабочий стол</a></li>
+        <li><a href="/tasks/">Задачи</a></li>
+        <li><a href="/registry/">Документы</a></li>
+        <li><a href="/projects/">Проекты</a></li>
+        <li><a href="/calendar/">Встречи</a></li>
+        <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Система</a></li>
+    </ul>
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="/system/organization/">Организация</a></li>
+        <li><a href="/system/users/">Пользователи</a></li>
+        <li><a href="/system/roles/">Роли</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="/system/docs/">Документы</a></li>
+        <li><a href="/system/forms/">Формы</a></li>
+        <li><a href="/system/references/">Справочники</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="/system/projects/">Проекты</a></li>
+        <li><a href="/system/registry/">Реестры</a></li>
+        <li><a href="/system/tasks/">Задачи</a></li>
+    </ul>
+</nav>
 
 
 
         
 		<div class="row">
-            <div class="col s12 l2 card blue-grey lighten-5">
-                <div class="card-content">
-                    
-                    <span class="card-title">Filter</span>
-                    <form name="{{form.Name}}" method="{{form.Method}}" action="{{form.Action}}">
-                        
-                        
-{% macro RenderTextField(element) %}
-
-<div class="row">
-    <div class="input-field col s12">
-
-        <input  {% if element.Disabled %} disabled {% endif %}
-				id="{{ element.HashName }}"
-                class=""
-                {% if element.TplType() == "numeric" %}
-                type="number"
-                {% else %}
-                type="text"
-                {% endif %}
-                name="{{ element.HashName }}"
-                value="{{ element.GetValue() }}"
-                placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
-        >
-		<label for="{{ element.HashName }}">{{ element.Label }}
-            {% if element.Required %}<span> *</span>{% endif %}
-		</label>
-
-	</div>
-</div>
-
-{% endmacro %}
-
-
-
-
-
-{% macro RenderTextareaField(element) %}
-
-	<div class="input-label{% if element.Error %} has-error{% endif %}">
-		{{ element.Label }}
-		{% if element.Required %}<span> *</span>{% endif %}
-	</div>
-	<div class="input-block">
-		<textarea name="{{ element.HashName }}"
-				  rows="3"
-				  {% if element.Disabled %} disabled {% endif %}
-				  placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
-				  class="
-					  input
-					  {% if element.Error %} input-error{% endif %}
-					  {% if element.EisRequired %} input-warning js-input-warning{% endif %}
-				  "
-		>{{ element.GetValue() }}</textarea>
-
-		{% if element.Error %}
-			<div class="error-block" role="alert">{{ element.Error }}</div>
-		{% endif %}
-
-		{% if element.Description %}
-			<div class="help-block">{{ element.Description }}</div>
-		{% endif %}
-	</div>
-	<div class="clear"></div>
-
-{% endmacro %}
-
-
-
-
-{% macro RenderSelectField(element) %}
-<div class="row">
-	<div class="input-field col s12">
-
-		<select
-				name="{{ element.HashName }}"
-		>
-			{% for option in element.Options %}
-			<option value="{{ option.Value }}" {% if element.GetValue()|integer == option.Value|integer %} selected {% endif %}>{{ option.Label }}</option>
-			{% endfor%}
-		</select>
-
-		<label>{{ element.Label }}
-			{% if element.Required %}<span> *</span>{% endif %}
-		</label>
-
-	</div>
-</div>
-{% endmacro %}
-
-
-
-{% macro RenderCheckboxField(element) %}
-
-
-<p>
-    <input {% if element.Disabled %} disabled {% endif %}
-            id="{{ element.HashName }}"
-            type="checkbox"
-            name="{{ element.HashName }}"
-            value="1"
-            {% if element.Value %} checked {% endif %}
-    >
-    <label for="{{ element.HashName }}">{{ element.Label }}
-        {% if element.Required %}<span> *</span>{% endif %}
-    </label>
-</p>
-
-{% endmacro %}
-
-
-
-
-
-{% macro RenderDateTimeField(element) %}
-
-<!-- Дейтпикер -->
-<div class="input-label{% if element.Error %} has-error{% endif %}">
-    {{ element.Label }}
-    {% if element.Required %}<span> *</span>{% endif %}
-</div>
-<div class="input-block js-input-datepicker">
-    <input
-            {% if element.Disabled %} disabled {% endif %}
-            class="
-                input datetimepicker
-                {% if element.Error %} input-error{% endif %}
-                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
-            "
-            type="text"
-            name="{{ element.HashName }}"
-    {% if element.GetValue() %}
-            value="{{ element.GetValue() }}"
-    {% else %}
-            value=""
-    {% endif %}
-            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
-    >
-
-    <div class="error-block js-input-error" role="alert">
-        {% if element.Error %}
-            {{ element.Error }}
-        {% endif %}
-    </div>
-
-    {% if element.Description %}
-    <div class="help-block">{{ element.Description }}</div>
-    {% endif %}
-</div>
-<div class="clear"></div>
-<!-- Дейтпикер конец -->
-
-{% endmacro %}
-
-
-
-
-
-{% macro RenderDateField(element) %}
-
-<!-- Дейтпикер -->
-
-<div class="input-label{% if element.Error %} has-error{% endif %}">
-    {{ element.Label }}
-    {% if element.Required %}<span> *</span>{% endif %}
-</div>
-<div class="input-block js-input-datepicker">
-    <input
-            {% if element.Disabled %} disabled {% endif %}
-            class="
-                input datepicker
-                {% if element.Error %} input-error{% endif %}
-                {% if element.EisRequired %} input-warning js-input-warning{% endif %}
-            "
-            type="text"
-            name="{{ element.HashName }}"
-            value="{{ element.GetValue() }}"
-            placeholder="{% if element.Placeholder %}{{ element.Placeholder }}{% endif %}"
-    >
-
-    <div class="error-block js-input-error" role="alert">
-        {% if element.Error %}
-            {{ element.Error }}
-        {% endif %}
-    </div>
-
-    {% if element.Description %}
-        <div class="help-block">{{ element.Description }}</div>
-    {% endif %}
-
-</div>
-<div class="clear"></div>
-<!-- Дейтпикер конец -->
-
-{% endmacro %}
-
-
-
-
-{% macro RenderMultipleSelectField(element) %}
-
-<div class="input-label{% if element.Error %} has-error{% endif %}">
-    {{ element.Label }}
-    {% if element.Required %}<span> *</span>{% endif %}
-</div>
-
-<div class="input-block">
-
-    <select
-            class="
-				input selectpicker
-				{% if element.Error %} input-error{% endif %}
-            	{% if element.EisRequired %} input-warning js-input-warning{% endif %}
-			"
-            data-width="100%"
-            data-size="10"
-            data-container="body"
-            data-header="<button type='button' class='close actions-btn right js-option-reset'>Сбросить</button>"
-            title="Не выбрано..."
-            name="{{ element.HashName }}"
-            multiple="multiple"
-    {% if element.Disabled %} disabled {% endif %}>
-
-
-    {% for option in element.Options %}
-    <option value="{{ option.Value }}" {% if element.In(option.Value) %} selected {% endif %}>{{ option.Label }}</option>
-    {% endfor%}
-    </select>
-
-
-    {% if element.Error %}
-    <div class="error-block" role="alert">{{ element.Error }}</div>
-    {% endif %}
-
-    {% if element.Description %}
-    <div  class="help-block">{{ element.Description }}</div>
-    {% endif %}
-
-</div>
-<div class="clear"></div>
-
-{% endmacro %}
-
-
-
-
-{% macro RenderMultipleCheckboxField(element) %}
-	
-<div class="form-group">
-
-	{% for option in element.Options() %}
-		<div class="input-label"></div>
-		<div class="input-block">
-			<label class="checkbox-container">
-				<input
-					class="checkbox"
-					type="checkbox"
-					name="{{ element.HashName() }}[]"
-					value="{{ option.Value }}"
-					{% if element.In(option.Value) %} checked {% endif %}
-				>
-				<span>
-					<span class="checkbox__label">{{ option.Label }}</span>
-					{% if element.Description %}
-						<div class="checkbox__descr"> — {{ element.Description }}</div>
-					{% endif %}
-				</span>
-
-			</label>
-
-			{% if element.Error %}
-			<div class="error-block" role="alert">{{ element.Error }}</div>
-			{% endif %}
-
-		</div>
-		<div class="clear"></div>
-	{% endfor%}
-
-</div>
-{% endmacro %}
-
-
-
-
-
-{% macro RenderHiddenField(element) %}
-	
-<input
-	class="form-control" 
-	type="hidden"
-	tabindex="-1"
-	name="{{ element.HashName }}" realName="{{ element.Name }}"
-	value="{{ element.GetValue() }}"
->
-
-{% if element.Error %}
-	<div class="error-block" role="alert">{{ element.Error }}</div>
-{% endif %}
-
-{% endmacro %}
-
-
-
-
-
-
-
-{% for element in form.Elements %}
-	{% if element.TplType() == "text" %}
-		{{ RenderTextField(element) }}
-		{% elif element.TplType() == "numeric" %}
-		{{ RenderTextField(element) }}
-		{% elif element.TplType() == "hidden" %}
-		{{ RenderHiddenField(element) }}
-		{% elif element.TplType() == "textarea" %}
-		{{ RenderTextareaField(element) }}
-		{% elif element.TplType() == "select" %}
-		{{ RenderSelectField(element) }}
-        {% elif element.TplType() == "checkbox" %}
-        {{ RenderCheckboxField(element) }}
-		{% elif element.TplType() == "multiple_select" %}
-		{{ RenderMultipleSelectField(element) }}
-		{% elif element.TplType() == "multiple_checkbox" %}
-		{{ RenderMultipleCheckboxField(element) }}
-		{% elif element.TplType() == "date" %}
-		{{ RenderDateField(element) }}
-		{% elif element.TplType() == "datetime" %}
-		{{ RenderDateTimeField(element) }}
-		{% elif element.TplType() == "checkbox" %}
-		{{ RenderCheckboxField(element) }}
-	{% endif %}
-{% endfor %}
-
-                        <br><br>
-                        <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" name="action">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="col s12 l8">
+            <div class="col s18 l8">
                 
-                <table class="responsive-table bordered">
-                    <tr>
-                        <th>Item</th>
-                        <th>SalesAvg
-                            {% if sort == "sa" %}
-                            {% if sortDir == "asc" %} <a href="?s=sa&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=sa&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                                {% endif %}
-                            {% else %} <a href="?s=sa&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>CostsAvg
-                            {% if sort == "ca" %}
-                            {% if sortDir == "asc" %} <a href="?s=ca&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=ca&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=ca&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>Expected Income
-                            {% if sort == "inc" %}
-                            {% if sortDir == "asc" %} <a href="?s=inc&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=inc&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=inc&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>Return on Sales
-                            {% if sort == "ros" %}
-                            {% if sortDir == "asc" %} <a href="?s=ros&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=ros&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=ros&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>Market activity<br><span class="small-annotation text-grey lighten-2">Approx items per day</span>
-                            {% if sort == "ov" %}
-                            {% if sortDir == "asc" %} <a href="?s=ov&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=ov&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=ov&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}</th>
-                        <th>..</th>
-                    </tr>
 
-                    {% for item in items %}
-                    <tr>
-                        <td>
-                            <a class="valign-wrapper" href="/item/{{ item.TypeID|EncryptURL }}"><img src="/images/types/{{ item.ProductTypeID }}_32.png" class="eve-icon">{{ item.TypeName }}</a>
-                        </td>
-                        <td>{{ item.AvgPrice|FormatPrice }}</td>
-                        <td>{{ item.AvgCost|FormatPrice }}</td>
-                        <td>{{ item.Income|FormatPrice }}</td>
-                        <td>{{ item.RoS|FormatPrice }}%</td>
-                        <td>{{ item.OrdersVol }}</td>
-                        <td>
-                            <a href="#" class="button-link my-blueprints-control" data-typeid="{{ item.TypeID|EncryptURL }}"><i class="material-icons grey-text text-darken-1" title="Pin it!">pin_drop</i></a>
-                            <a href="/market/{{ item.ProductTypeID|EncryptURL }}" class="button-link"><i class="material-icons grey-text text-darken-1" title="Market">multiline_chart</i></a>
-                            {% if item.NotPrecise %}
-                            <a href="#" class="button-link tooltipped" title="Missing prices for required components"><i class="material-icons grey-text text-darken-1">warning</i></a>
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table>
+
+
                 
                 <div class="container bottom padded">
                 
@@ -497,9 +107,6 @@
 
 
                 </div>
-            </div>
-            <div class="col s12 l2">
-                banner
             </div>
 		</div>
 
@@ -537,42 +144,38 @@
 
 
 
-<footer class="page-footer blue-grey">
+<footer class="page-footer light-blue darken-4">
     <div class="container">
         <div class="row">
             <div class="col l4 s12">
                 <h5>
-                    Help EIMA Grow
+                    Новости и релизы
                 </h5>
-                <p>We hope you have enjoyed using EIMA and it helped you somehow. If you feel like you want to support us then you can help us by donating some ISK ingame to the character Ace Ruffian. Any donation could help supporting this project and would be greatly appreciated.</p>
+                <p>Последние новости и релизы</p>
             </div>
             <div class="col l4 s12">
                 <h5>
-                    Connect
+                    Свяжитесь с нами
                 </h5>
-                <a href="https://www.fuzzwork.co.uk/dump/" class="white-text">EVE SDE Dump by fuzzwork.co.uk</a><br>
-                <iframe src="https://ghbtns.com/github-btn.html?user=aehler&repo=weasel&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-            </div>
+                </div>
             <div class="col l4 s12">
                 <h5>
-                    Cookies
+                    Куки файлы
                 </h5>
-                <p>This website use cookies for essential purposes. Such as auto login and analytics. We use cookies in order to give you the best experience possible.</p>
+                <p>Этот сайт использует файлы куки для технических целей.</p>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="row">
-            &copy;&nbsp;2018 EVE INDUSTRY MARKET ANALYZER, All rights reserved.
-            <br><br>
-            EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. All other trademarks are the property of their respective owners. EVE Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of CCP hf. CCP is in no way responsible for the content on or functioning of this website, nor can it be liable for any damage arising from the use of this website.
+            &copy;&nbsp;2018 qube, All rights reserved.
         </div>
     </div>
 </footer>
 
 
 
-<ul id="slide-out" class="side-nav grey lighten-5">
+<ul id="slide-out" class="side-nav grey lighten-3">
     <li><div class="user-view">
     {% if currentUser.UserID == 0 %}
         <span class="blue-text"><i class="material-icons medium">person</i></span>
@@ -591,21 +194,7 @@
         <div class="row">
             <div class="col l1 s12"></div>
             <div class="col l10 s12">
-            <form id="settings-form" autocomplete="off">
-                <h5 class="grey-text">Settings</h5>
-                <div class="input-field">
-                    <input id="region" type="text" class="autocomplete" name="region" autocomplete="off" value="{{ userSettings.Region }}">
-                    <input name="regionID" id="regionID" value="{{ userSettings.RegionID }}" type="hidden" autocomplete="off" />
-                    <label for="region">Region</label>
-                </div>
-                <div class="input-field">
-                    <input name="settings-pi" id="settings-pi" value="{{ userSettings.MarketShare }}" type="text" autocomplete="off" />
-                    <label for="settings-pi">Market share, %</label>
-                </div>
-                <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" id="settings-submit">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-            </form>
+
             </div>
             <div class="col l1 s12"></div>
         </div>

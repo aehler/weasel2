@@ -1,7 +1,7 @@
 package event
 
 import (
-	"github.com/akdcode/srm-services/auth"
+	"lib/auth"
 )
 
 type EventType string

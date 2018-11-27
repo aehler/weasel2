@@ -1,9 +1,9 @@
 db:
   postgresql:
-    address: "127.0.0.1:5432"
+    address: "192.168.56.1:5432"
     username: "weasel"
     password: "qwr123rrr"
-    database: "eve"
+    database: "weasel"
 
 #  mongodb:
 #    address: "192.168.1.56"
@@ -11,10 +11,10 @@ db:
 #    password: ""
 #    database: "service_logs"
 
-redis:
-  host:   "192.168.1.211"
-  port:   6381
-  db:     10
+#redis:
+#  host:   "192.168.1.211"
+#  port:   6381
+#  db:     10
 
 path:
   templates: "templates/html" #Path to templates

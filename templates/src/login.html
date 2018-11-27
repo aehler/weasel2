@@ -1,0 +1,42 @@
+{% extends "layout_simple.html" %}
+
+{% block content %}
+<div class="parallax-container">
+    <div class="parallax"><img src="/assets/images/bg-main-2.jpg"></div>
+<div class="container">
+		<div class="col s12 l12">
+            <div class="row">
+
+				<form class="col s12" action="/login/">
+
+                    <div class="card white z-depth-3 ">
+                        <div class="card-content">
+                            <span class="card-title">Вход в систему</span>
+
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="login" type="text" class="validate" name="login">
+									<label for="login">Логин</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="password" type="password" class="validate" name="password">
+									<label for="password">Пароль</label>
+								</div>
+							</div>
+						</div>
+                        <div class="card-action">
+                            <a href="#" class="form-sender">Вход</a>
+                            <a href="/register/">Регистрация</a>
+                            <a href="/passrecover/">Забыли пароль?</a>
+                        </div>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+</div>
+</div>
+{% endblock %}

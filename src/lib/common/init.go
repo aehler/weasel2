@@ -1,7 +1,6 @@
 package common
 
 import (
-	"app/registry"
 	"strings"
 )
 
@@ -14,9 +13,9 @@ var regionList []regions
 
 func Init() {
 
-	if err := registry.Registry.Connect.SQLX().Select(&regionList, `select "regionID", "regionName" from evesde."mapRegions" order by "regionName"`); err != nil {
-		panic(err.Error())
-	}
+	//if err := registry.Registry.Connect.SQLX().Select(&regionList, `select "regionID", "regionName" from evesde."mapRegions" order by "regionName"`); err != nil {
+	//	panic(err.Error())
+	//}
 
 }
 

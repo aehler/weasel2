@@ -3,8 +3,7 @@ package worker
 import (
 	"github.com/adjust/redismq"
 	"github.com/jmoiron/sqlx"
-	"github.com/akdcode/srm-lib/discovery"
-	"github.com/akdcode/srm-lib/business_events/event"
+	"app/events/event"
 )
 
 const (
@@ -19,7 +18,6 @@ type listener struct {
 	consumerName Consumer
 	queue        func() *redismq.Queue
 	db           func() *sqlx.DB
-	locator      discovery.Locator
 	writer       Actioner
 }
 

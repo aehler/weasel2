@@ -18,7 +18,7 @@ func Route(ap *app.App) {
 
 	ap.Post("/settings/append/", auth.GetAuthUser, appendUserSettings)
 
-	ap.Get("/login/", auth.GetAuthUser, func(c *app.Context){
+	ap.Get("/login-oauth/", auth.GetAuthUser, func(c *app.Context){
 
 		user := c.Get("user").(*au.User)
 

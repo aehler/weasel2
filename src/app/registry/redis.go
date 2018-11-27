@@ -7,13 +7,14 @@ import (
 	"github.com/adjust/redismq"
 	"time"
 	"encoding/json"
-	"github.com/akdcode/monitor/protocols"
 )
+
+type Message struct{}
 
 type Redis struct {
 	client *redis.Client
 	MQ *redismq.Queue
-	Listeners []func(p *protocols.Message) error
+	Listeners []func(p *Message) error
 }
 
 type payload struct {
@@ -128,7 +129,7 @@ func (r *Redis) readMQ() {
 			continue
 		}
 
-		msg := &protocols.Message{}
+		msg := &Message{}
 
 		if err := json.Unmarshal([]byte(p.Payload), msg); err != nil {
 
@@ -154,7 +155,7 @@ func (r *Redis) readMQ() {
 
 }
 
-func (r *Redis) AddListener(f func(p *protocols.Message) error) {
+func (r *Redis) AddListener(f func(p *Message) error) {
 
 	r.Listeners = append(r.Listeners, f)
 

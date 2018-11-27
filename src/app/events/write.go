@@ -29,13 +29,6 @@ func (w *Write) Action(e event.Event) error {
 		return errors.New("BE entity not found")
 	}
 
-	if err != nil {
-
-		fmt.Println("Couldn't fetch object")
-
-		return err
-	}
-
 	e.EventData["user"] = e.User
 
 	ed, errj := json.Marshal(e.EventData)
@@ -47,7 +40,7 @@ func (w *Write) Action(e event.Event) error {
 	}
 
 	if dberr := w.db().Get(&dbr, "select * from weasel_tasks.create_new_alert($1, $2, $3, $4)",
-		string(e.BusinessEvent),
+		string(e.EventType),
 		e.Object,
 		e.ObjectId,
 		string(ed),

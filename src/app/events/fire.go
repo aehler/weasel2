@@ -1,7 +1,7 @@
 package events
 
 import (
-	"github.com/akdcode/srm-lib/business_events/event"
+	"app/events/event"
 	"github.com/adjust/redismq"
 	"encoding/json"
 	"fmt"

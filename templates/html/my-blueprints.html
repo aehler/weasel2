@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-	<title>EVE INDUSTRY MARKET ANALYZER</title>
+	<title>qube - автоматизация в облаке</title>
 
 	<link href="/assets/css/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/materialize.min.css" type="text/css" media="screen,projection" />
@@ -12,14 +12,14 @@
 	<script src="/assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="/assets/js/custom.js"></script>
 </head>
-<body class="grey lighten-5 grey-text text-darken-4">
+<body class="white grey-text text-darken-4">
 
-<nav class="blue-grey" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">EIMA</a>
+<nav class="light-blue darken-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">qube</a>
 
         <ul class="right hide-on-med-and-down">
-            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Settings</a></li>
-            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Pinned Blueprints 
+            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Персонализация</a></li>
+            <li><a href="/favorites/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Мои документы 
 
                 {% if pinnedBPOCount|integer > 0 %}
                     <span class="new badge orange" data-badge-caption="">{{ pinnedBPOCount|integer }}</span>
@@ -29,8 +29,8 @@
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
-            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Settings</a></li>
-            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Pinned Blueprints 
+            <li><a href="#" data-activates="slide-out" id="settings-menu"><i class="material-icons left">settings</i> Персонализация</a></li>
+            <li><a href="/my-blueprints/" id="bpo-menu"><i class="material-icons left">pin_drop</i> Мои документы 
 
                 {% if pinnedBPOCount|integer > 0 %}
                 <span id="pinned-count" class="new badge orange" data-badge-caption="">{{ pinnedBPOCount|integer }}</span>
@@ -41,17 +41,29 @@
     </div>
 
 </nav>
-
-<div class="row">
-    <div class="container col s12 l6 right">
-        <div class="input-field col s8 inline left">
-            <i class="material-icons prefix" id="search-btn">search</i>
-            <input id="search" type="text" name="searchText" class="grey-text" value="{{ search }}">
-            <label for="search">Search</label>
-        </div>
-    </div>
-</div>
-
+<nav class="light-blue darken-4" role="navigation">
+    <ul class="left hide-on-med-and-down">
+        <li><a href="/dashboard/">Рабочий стол</a></li>
+        <li><a href="/tasks/">Задачи</a></li>
+        <li><a href="/registry/">Документы</a></li>
+        <li><a href="/projects/">Проекты</a></li>
+        <li><a href="/calendar/">Встречи</a></li>
+        <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Система</a></li>
+    </ul>
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="/system/organization/">Организация</a></li>
+        <li><a href="/system/users/">Пользователи</a></li>
+        <li><a href="/system/roles/">Роли</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="/system/docs/">Документы</a></li>
+        <li><a href="/system/forms/">Формы</a></li>
+        <li><a href="/system/references/">Справочники</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="/system/projects/">Проекты</a></li>
+        <li><a href="/system/registry/">Реестры</a></li>
+        <li><a href="/system/tasks/">Задачи</a></li>
+    </ul>
+</nav>
 
 
 
@@ -510,42 +522,38 @@
 
 
 
-<footer class="page-footer blue-grey">
+<footer class="page-footer light-blue darken-4">
     <div class="container">
         <div class="row">
             <div class="col l4 s12">
                 <h5>
-                    Help EIMA Grow
+                    Новости и релизы
                 </h5>
-                <p>We hope you have enjoyed using EIMA and it helped you somehow. If you feel like you want to support us then you can help us by donating some ISK ingame to the character Ace Ruffian. Any donation could help supporting this project and would be greatly appreciated.</p>
+                <p>Последние новости и релизы</p>
             </div>
             <div class="col l4 s12">
                 <h5>
-                    Connect
+                    Свяжитесь с нами
                 </h5>
-                <a href="https://www.fuzzwork.co.uk/dump/" class="white-text">EVE SDE Dump by fuzzwork.co.uk</a><br>
-                <iframe src="https://ghbtns.com/github-btn.html?user=aehler&repo=weasel&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-            </div>
+                </div>
             <div class="col l4 s12">
                 <h5>
-                    Cookies
+                    Куки файлы
                 </h5>
-                <p>This website use cookies for essential purposes. Such as auto login and analytics. We use cookies in order to give you the best experience possible.</p>
+                <p>Этот сайт использует файлы куки для технических целей.</p>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="row">
-            &copy;&nbsp;2018 EVE INDUSTRY MARKET ANALYZER, All rights reserved.
-            <br><br>
-            EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. All other trademarks are the property of their respective owners. EVE Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of CCP hf. CCP is in no way responsible for the content on or functioning of this website, nor can it be liable for any damage arising from the use of this website.
+            &copy;&nbsp;2018 qube, All rights reserved.
         </div>
     </div>
 </footer>
 
 
 
-<ul id="slide-out" class="side-nav grey lighten-5">
+<ul id="slide-out" class="side-nav grey lighten-3">
     <li><div class="user-view">
     {% if currentUser.UserID == 0 %}
         <span class="blue-text"><i class="material-icons medium">person</i></span>
@@ -564,21 +572,7 @@
         <div class="row">
             <div class="col l1 s12"></div>
             <div class="col l10 s12">
-            <form id="settings-form" autocomplete="off">
-                <h5 class="grey-text">Settings</h5>
-                <div class="input-field">
-                    <input id="region" type="text" class="autocomplete" name="region" autocomplete="off" value="{{ userSettings.Region }}">
-                    <input name="regionID" id="regionID" value="{{ userSettings.RegionID }}" type="hidden" autocomplete="off" />
-                    <label for="region">Region</label>
-                </div>
-                <div class="input-field">
-                    <input name="settings-pi" id="settings-pi" value="{{ userSettings.MarketShare }}" type="text" autocomplete="off" />
-                    <label for="settings-pi">Market share, %</label>
-                </div>
-                <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" id="settings-submit">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-            </form>
+
             </div>
             <div class="col l1 s12"></div>
         </div>

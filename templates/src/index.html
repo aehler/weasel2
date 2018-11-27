@@ -5,7 +5,7 @@
 <div class="parallax-container">
     <div class="parallax"><img src="/assets/images/backgrounds-rtr-1920x1080.jpg"></div>
     <br><br>
-    <h1 class="header center orange-text">EVE INDUSTRY MARKETING ANALYZER</h1>
+    <h1 class="header center orange-text">qube - простые решения сложных проблем</h1>
 </div>
 {% endblock %}
 
@@ -14,94 +14,15 @@
 
 {% block content %}
 		<div class="row">
-            <div class="col s12 l2 card blue-grey lighten-5">
-                <div class="card-content">
-                    {% verbatim %}
-                    <span class="card-title">Filter</span>
-                    <form name="{{form.Name}}" method="{{form.Method}}" action="{{form.Action}}">
-                        {% endverbatim %}
-                        {% include "form/foreach.html" %}
-                        <br><br>
-                        <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" name="action">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="col s12 l8">
+            <div class="col s18 l8">
                 {% verbatim %}
-                <table class="responsive-table bordered">
-                    <tr>
-                        <th>Item</th>
-                        <th>SalesAvg
-                            {% if sort == "sa" %}
-                            {% if sortDir == "asc" %} <a href="?s=sa&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=sa&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                                {% endif %}
-                            {% else %} <a href="?s=sa&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>CostsAvg
-                            {% if sort == "ca" %}
-                            {% if sortDir == "asc" %} <a href="?s=ca&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=ca&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=ca&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>Expected Income
-                            {% if sort == "inc" %}
-                            {% if sortDir == "asc" %} <a href="?s=inc&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=inc&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=inc&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>Return on Sales
-                            {% if sort == "ros" %}
-                            {% if sortDir == "asc" %} <a href="?s=ros&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=ros&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=ros&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}
-                        </th>
-                        <th>Market activity<br><span class="small-annotation text-grey lighten-2">Approx items per day</span>
-                            {% if sort == "ov" %}
-                            {% if sortDir == "asc" %} <a href="?s=ov&so=desc{{ qs }}"><i class="material-icons">arrow_drop_down</i></a>
-                            {% else %} <a href="?s=ov&so=asc{{ qs }}"><i class="material-icons">arrow_drop_up</i></a>
-                            {% endif %}
-                            {% else %} <a href="?s=ov&so=desc{{ qs }}"><i class="material-icons">sort</i></a>
-                            {% endif %}</th>
-                        <th>..</th>
-                    </tr>
 
-                    {% for item in items %}
-                    <tr>
-                        <td>
-                            <a class="valign-wrapper" href="/item/{{ item.TypeID|EncryptURL }}"><img src="/images/types/{{ item.ProductTypeID }}_32.png" class="eve-icon">{{ item.TypeName }}</a>
-                        </td>
-                        <td>{{ item.AvgPrice|FormatPrice }}</td>
-                        <td>{{ item.AvgCost|FormatPrice }}</td>
-                        <td>{{ item.Income|FormatPrice }}</td>
-                        <td>{{ item.RoS|FormatPrice }}%</td>
-                        <td>{{ item.OrdersVol }}</td>
-                        <td>
-                            <a href="#" class="button-link my-blueprints-control" data-typeid="{{ item.TypeID|EncryptURL }}"><i class="material-icons grey-text text-darken-1" title="Pin it!">pin_drop</i></a>
-                            <a href="/market/{{ item.ProductTypeID|EncryptURL }}" class="button-link"><i class="material-icons grey-text text-darken-1" title="Market">multiline_chart</i></a>
-                            {% if item.NotPrecise %}
-                            <a href="#" class="button-link tooltipped" title="Missing prices for required components"><i class="material-icons grey-text text-darken-1">warning</i></a>
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table>
+
+
                 {% endverbatim %}
                 <div class="container bottom padded">
                 {% include "paginator.html" %}
                 </div>
-            </div>
-            <div class="col s12 l2">
-                banner
             </div>
 		</div>
 

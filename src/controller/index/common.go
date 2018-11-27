@@ -6,8 +6,13 @@ import (
 	"lib/items"
 	"app/form"
 	"lib/auth"
-	"lib/common"
 )
+
+func Dashboard(c *app.Context) {
+	c.RenderHTML("/timeline.html", map[string]interface {} {
+
+	})
+}
 
 func Index(c *app.Context) {
 
@@ -15,7 +20,7 @@ func Index(c *app.Context) {
 
 	user := c.Get("user").(*auth.User)
 
-	settings := c.Get("userSettings").(common.UserSettings)
+	//settings := c.Get("userSettings").(common.UserSettings)
 
 	limiter := paginator.NewLimiter(20, current)
 
@@ -77,31 +82,16 @@ func Index(c *app.Context) {
 
 	}
 
-	itemList, err := items.Index(limiter, sort, sortDir, search, user, settings)
-
-	if err != nil {
-
-		c.RenderHTML("/errors/500.html", map[string]interface {} {
-			"Error" : err.Error(),
-		})
-
-		c.Stop()
-
-		return
-
-	}
 
 	c.RenderHTML("/index.html", map[string]interface {} {
-		"items"   : itemList.Items,
 		"sort"    : sort,
 		"sortDir" : sortDir,
 		"search"  : search,
 		"qs"      : qs,
-		"totals"  : itemList.Totals,
 		"form"    : post.Context(),
 		"paginator": paginator.NewPaginator(
 			current,
-			itemList.Totals.Total,
+			0,
 			limiter.Limit(),
 			"/",
 			map[string]string{
