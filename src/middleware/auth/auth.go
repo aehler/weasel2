@@ -38,7 +38,7 @@ func GetAuthUser(c *app.Context) {
 
 			if err := registry.Registry.Session.Add(sd, u); err != nil {
 
-				c.RenderError(err.Error())
+				c.RenderJSONError(err)
 
 				return
 			}
@@ -69,7 +69,7 @@ func GetAuthUser(c *app.Context) {
 
 			fmt.Println("couldn't set cookie")
 
-			c.RenderError(err.Error())
+			c.RenderJSONError(err)
 
 			return
 
@@ -81,7 +81,7 @@ func GetAuthUser(c *app.Context) {
 
 		if err := registry.Registry.Session.Add(ssid, u); err != nil {
 
-			c.RenderError(err.Error())
+			c.RenderJSONError(err)
 
 			return
 		}

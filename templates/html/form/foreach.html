@@ -28,6 +28,31 @@
 
 
 
+{% macro RenderPasswordField(element) %}
+
+<div class="row">
+    <div class="input-field col s12">
+
+        <input  {% if element.Disabled %} disabled {% endif %}
+				id="{{ element.HashName }}"
+                class=""
+                type="password"
+                name="{{ element.HashName }}"
+                value="{{ element.GetValue() }}"
+                placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+        >
+		<label for="{{ element.HashName }}">{{ element.Label }}
+            {% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+
+{% endmacro %}
+
+
+
+
 
 {% macro RenderTextareaField(element) %}
 
@@ -297,13 +322,18 @@
 
 
 
-
-
+<div class="container col s8">
+	<form name="{{form.Name}}">
+        <div class="row">
+			<h5>{{form.Title}}</h5>
+		</div>
 {% for element in form.Elements %}
 	{% if element.TplType() == "text" %}
 		{{ RenderTextField(element) }}
 		{% elif element.TplType() == "numeric" %}
 		{{ RenderTextField(element) }}
+        {% elif element.TplType() == "password" %}
+		{{ RenderPasswordField(element) }}
 		{% elif element.TplType() == "hidden" %}
 		{{ RenderHiddenField(element) }}
 		{% elif element.TplType() == "textarea" %}
@@ -324,3 +354,8 @@
 		{{ RenderCheckboxField(element) }}
 	{% endif %}
 {% endfor %}
+        <button class="btn waves-effect waves-light form-sender">Сохранить
+            <i class="material-icons right">send</i>
+        </button>
+	</form>
+</div>

@@ -16,13 +16,17 @@ type Auth struct {
 }
 
 type RegisterForm struct {
-	Login string `weaselform:"login" formLabel:"Email"`
-	Email string `weaselform:"login" formLabel:"Email"`
+	Login string `weaselform:"text" formLabel:"login"`
+	Email string `weaselform:"text" formLabel:"Email"`
 	Password string `weaselform:"password" formLabel:"Пароль"`
 	Password2 string `weaselform:"password" formLabel:"Повторите пароль"`
 	UserLastName string `weaselform:"text" formLabel:"Фамилия"`
 	UserFirstName  string `weaselform:"text" formLabel:"Имя"`
 	UserMiddleName string `weaselform:"text" formLabel:"Отчество"`
+	OrganizationName string `weaselform:"text" formLabel:"Организация"`
+	OrganizationINN string `weaselform:"text" formLabel:"ИНН"`
+	OrganizationKPP string `weaselform:"text" formLabel:"КПП"`
+	OrganizationOKOPF uint `weaselform:"text" formLabel:"ОКОПФ"`
 }
 
 type User struct {
@@ -44,10 +48,21 @@ func AuthUser(login, password string) (*User, error) {
 
 	u := User{}
 
+	salt := ""
+
+	if err := registry.Registry.Connect.SQLX().Get(&salt, "select salt from weasel_auth.users where user_login=$1 and is_active = true"); err != nil {
+
+		time.Sleep(2000 * time.Millisecond)
+
+		return &User{}, err
+	}
+
+	p2 := crypto.Encrypt(password, salt)
+
 	if err := registry.Registry.Connect.SQLX().Get(&u, `select user_lastname, user_firstname, user_middlename, user_id, is_active, user_login, user_email, is_admin, organization_id
 	from weasel_auth.users where user_login=$1 and user_password=$2 and is_active = true`,
 		login,
-		password,
+		p2,
 	); err != nil {
 
 		time.Sleep(2000 * time.Millisecond)

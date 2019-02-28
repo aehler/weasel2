@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-	<title>qube - автоматизация в облаке</title>
+    <title>qube - автоматизация в облаке</title>
 
-	<link href="/assets/css/icons.css" rel="stylesheet">
+    <link href="/assets/css/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/materialize.min.css" type="text/css" media="screen,projection" />
-    <link rel="stylesheet" href="/assets/css/custom.css" type="text/css" media="screen,projection" />
+    <link rel="stylesheet" href="/assets/css/custom.css?1066173951" type="text/css" media="screen,projection" />
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
-	<script src="/assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/assets/js/custom.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/custom.js?1066173951"></script>
 </head>
 <body class="white grey-text text-darken-4">
 
@@ -91,6 +91,31 @@
                 {% else %}
                 type="text"
                 {% endif %}
+                name="{{ element.HashName }}"
+                value="{{ element.GetValue() }}"
+                placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
+        >
+		<label for="{{ element.HashName }}">{{ element.Label }}
+            {% if element.Required %}<span> *</span>{% endif %}
+		</label>
+
+	</div>
+</div>
+
+{% endmacro %}
+
+
+
+
+{% macro RenderPasswordField(element) %}
+
+<div class="row">
+    <div class="input-field col s12">
+
+        <input  {% if element.Disabled %} disabled {% endif %}
+				id="{{ element.HashName }}"
+                class=""
+                type="password"
                 name="{{ element.HashName }}"
                 value="{{ element.GetValue() }}"
                 placeholder="{% if element.Placeholder %} {{ element.Placeholder }} {% endif %}"
@@ -376,13 +401,18 @@
 
 
 
-
-
+<div class="container col s8">
+	<form name="{{form.Name}}">
+        <div class="row">
+			<h5>{{form.Title}}</h5>
+		</div>
 {% for element in form.Elements %}
 	{% if element.TplType() == "text" %}
 		{{ RenderTextField(element) }}
 		{% elif element.TplType() == "numeric" %}
 		{{ RenderTextField(element) }}
+        {% elif element.TplType() == "password" %}
+		{{ RenderPasswordField(element) }}
 		{% elif element.TplType() == "hidden" %}
 		{{ RenderHiddenField(element) }}
 		{% elif element.TplType() == "textarea" %}
@@ -403,6 +433,11 @@
 		{{ RenderCheckboxField(element) }}
 	{% endif %}
 {% endfor %}
+        <button class="btn waves-effect waves-light form-sender">Сохранить
+            <i class="material-icons right">send</i>
+        </button>
+	</form>
+</div>
 
                         <button class="btn waves-effect waves-light blue-grey lighten-1 disableable" type="submit" name="action">Get detailed quote
                             <i class="material-icons right">send</i>

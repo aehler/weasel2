@@ -25,6 +25,7 @@ func (p *PostgreSQL) Connect() {
 
 	p.conn = sqlx.MustOpen("postgres", p.ConnectString())
 
+	fmt.Println("Connected to postgres @ ", p.Address, p.Database)
 }
 
 func (p *PostgreSQL) SQLX() *sqlx.DB {

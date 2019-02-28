@@ -1,0 +1,16 @@
+{
+  "monolog.level" : "ERROR",
+  "debug" : false,
+  "csp": {
+    "CreateSignForEoc": "-signf -pin 621636 -xlongtype1 -errchain -thumbprint c4d854bc59b176feb12d41dbc4931bea5da4a3f3 -cadesTSA http://tsp1.rosatom.ru/tsp/tsp.srf",
+    "CspUtilPath": "/usr/bin/",
+    "CprospPath": "/opt/cprocsp/bin/amd64/",
+    "UnlinkTempFiles": true,
+    "uploads.hive": "../uploads",
+    "CprospStore": "/var/opt/cprocsp/tmp/"
+  },
+  "test": {
+    "wsdl": "http://localhost/wsdl.xml",
+    "serviceVersion": 2
+  }
+}

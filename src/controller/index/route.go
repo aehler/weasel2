@@ -12,21 +12,4 @@ func Route(ap *app.App) {
 
 	ap.Get("/dashboard/", auth.GetAuthUser, auth.Check, Dashboard)
 
-	ap.GetPost("/login/", func(c *app.Context){
-
-		if c.IsPost(){
-
-			c.RenderJSON(map[string]interface{}{
-				"error": "Not yet implemented",
-				"status" : false,
-			})
-
-			return
-		}
-
-		c.RenderHTML("/login.html", map[string]interface {} {
-
-		})
-	})
-
 }

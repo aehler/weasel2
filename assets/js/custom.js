@@ -6,6 +6,7 @@ $(document).ready(function() {
 
     $('.form-sender').click(function (e){
         e.preventDefault();
+        $(this).addClass("disabled");
         formSender({});
     });
 
@@ -380,9 +381,20 @@ formSender = function(options){
         url: $form.attr('action'),
         data: $form.serializeArray(),
         success: function (data) {
+
             if (!data.success) {
+
+                $control.removeClass("disabled");
+
                 Materialize.toast('Ошибка: <span class="red-text lighten-2" style="margin-left: 5px">' + data.error + '</span>', 4000)
             } else {
+
+
+
+                if(data.message) {
+                    Materialize.toast(data.message, 10000);
+                }
+
                 options.callback();
             }
         }

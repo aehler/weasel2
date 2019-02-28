@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+		<div class="row">
+			<div class="col s12 l12">
+				{% verbatim %}
+
+					{% if registerError %}
+
+					{% else %}
+
+						<span>Вам было направлено письмо на адрес {{ user.Email }}. Для завершения регистрации пройдите по ссылке, указанной в письме.</span>
+
+					{% endif %}
+
+                {% endverbatim %}
+			</div>
+		</div>
+</div>
+{% endblock %}

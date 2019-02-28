@@ -12,7 +12,9 @@ import (
 	"io/ioutil"
 	_ "net/http/pprof"
 	_ "lib/scheduler"
+	_ "app/events/manager"
 	"controller"
+	"app/mailer"
 )
 
 type Router interface {
@@ -47,6 +49,8 @@ func main() {
 	flag.Parse()
 
 	a := app.New(data, config, *withBinData)
+
+	mailer.Init(data)
 
 	controller.Route(a)
 

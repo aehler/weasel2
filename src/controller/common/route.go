@@ -29,4 +29,22 @@ func Route(ap *app.App) {
 	})
 
 	ap.Get("/login-success/", auth.GetAuthUser, oauthCallback)
+
+	ap.GetPost("/login/", auth.GetAuthUser, func(c *app.Context){
+
+		if c.IsPost(){
+
+			authCallback(c)
+
+			c.Stop()
+
+			return
+		}
+
+		c.RenderHTML("/login.html", map[string]interface {} {
+
+		})
+	})
+
+	ap.GetPost("/register/", auth.GetAuthUser, register)
 }

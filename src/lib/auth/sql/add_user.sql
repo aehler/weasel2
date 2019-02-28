@@ -6,17 +6,17 @@ create or replace function weasel_auth.add_user(
     _user_job_title  varchar,
     _user_phone  varchar,
     _user_email varchar,
+    _user_login varchar,
     _user_password varchar,
     _is_admin   boolean,
     _timezone_id int,
+    _salt varchar,
     out _user_id bigint
 ) returns bigint as $$
 
-    declare
-        _token_id varchar;
     begin
 
-        PERFORM 1 FROM weasel_auth.users WHERE user_login = lower(_user_email) and user_password = _user_password;
+        PERFORM 1 FROM weasel_auth.users WHERE user_login = lower(_user_login);
 
         IF FOUND THEN
             RAISE EXCEPTION 'USER_EXISTS';
@@ -41,7 +41,8 @@ create or replace function weasel_auth.add_user(
             is_admin,
             is_active,
             is_deleted,
-            timezone_id
+            timezone_id,
+            salt
         ) VALUES (
             _organization_id,
             _user_firstname,
@@ -49,13 +50,14 @@ create or replace function weasel_auth.add_user(
             _user_middlename,
             _user_job_title,
             _user_phone,
-            _user_email,
-            _user_email,
+            lower(_user_email),
+            lower(_user_login),
             _user_password,
             _is_admin,
-            true,
             false,
-            _timezone_id
+            false,
+            _timezone_id,
+            _salt
         ) RETURNING weasel_auth.users.user_id INTO _user_id;
 
     end;

@@ -3,7 +3,7 @@ db:
     address: "192.168.56.1:5432"
     username: "weasel"
     password: "qwr123rrr"
-    database: "weasel"
+    database: "postgres"
 
 #  mongodb:
 #    address: "192.168.1.56"
@@ -16,6 +16,13 @@ db:
 #  port:   6381
 #  db:     10
 
+sendmail:
+  host: "127.0.0.1"
+  port: 1025
+  username: ""
+  password: ""
+  from: "no-reply@qube.ru"
+
 path:
   templates: "templates/html" #Path to templates
   static: "/srv/src/static" #Path to static
@@ -27,3 +34,4 @@ esi: "https://esi.tech.ccp.is/latest/"
 session-timeout: 2592000 #session expiration in seconds
 
 memcached: "127.0.0.1:11211"
+

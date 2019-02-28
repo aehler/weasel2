@@ -7,6 +7,10 @@ import (
 	"fmt"
 )
 
+type Firer struct {
+	queue func() *redismq.Queue
+}
+
 func New(rmq func() *redismq.Queue) *Firer {
 
 	fmt.Printf("starting firer %s...", rmq().Name)
@@ -15,10 +19,6 @@ func New(rmq func() *redismq.Queue) *Firer {
 	return &Firer {
 		queue : rmq,
 	}
-}
-
-type Firer struct {
-	queue func() *redismq.Queue
 }
 
 func (f *Firer) Fire (e event.Event) error {

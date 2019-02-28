@@ -29,7 +29,7 @@ func GuestSettings(c *app.Context) {
 
 		fmt.Println("couldn't set cookie")
 
-		c.RenderError(err.Error())
+		c.RenderJSONError(err)
 
 		c.Stop()
 
@@ -56,7 +56,7 @@ func ResetLanguage(c *app.Context) {
 
 			fmt.Println("couldn't set cookie")
 
-			c.RenderError(err.Error())
+			c.RenderJSONError(err)
 
 			c.Stop()
 

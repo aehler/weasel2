@@ -111,6 +111,13 @@ func (c *Context) IsPost() bool {
 	return false
 }
 
+func (c *Context) RenderJSONError(err error) {
+	c.RenderJSON(map[string]interface{}{
+		"error": err.Error(),
+		"status" : false,
+	})
+}
+
 func (c *Context) RenderJSON(value interface {}) error {
 
 	select {
@@ -162,7 +169,7 @@ func (c *Context) RenderHTML(tmplName string, context map[string]interface {}) {
 				//c.RenderError(err.Error())
 
 				c.RenderHTML("/errors/500.html", map[string]interface {} {
-					"Error" : err.Error(),
+					"error" : err.Error(),
 				})
 
 				c.Stop()
@@ -183,10 +190,16 @@ func (c *Context) RenderHTML(tmplName string, context map[string]interface {}) {
 
 }
 
-func (c *Context) RenderError(e string) error {
+func (c *Context) RenderError(err error) {
 
-	return json.NewEncoder(c.ResponseWriter).Encode(map[string]string{"Error" : e})
+	c.RenderHTML("/errors/500.html", map[string]interface {} {
+		"error" : err.Error(),
+		"message": string(debug.Stack()),
+	})
 
+	c.Stop()
+
+	return
 }
 
 func (c *Context) Redirect(url string) {
