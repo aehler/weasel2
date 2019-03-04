@@ -43,7 +43,7 @@ func (*reader) OnData(b []byte) bool {
 
 	fmt.Println("===")
 
-	fmt.Print(string(b))
+	fmt.Print("MESSAGE:", string(b))
 
 	if strings.Contains(string(b), "(o)OK, (c)Cancel") {
 
@@ -61,8 +61,20 @@ func (*reader) OnData(b []byte) bool {
 
 	}
 
+	if strings.Contains(string(b), "No certificate matching the criteria") {
+
+		log.Println("Failed, do not continue")
+		done <- struct{}{}
+
+	}
+
 	if strings.Contains(string(b), "[ErrorCode: 0x00000000]") {
 		log.Println("Done")
+		done <- struct{}{}
+	}
+
+	if strings.Contains(string(b), "[ErrorCode: 0x8010002c]") {
+		log.Println("Failed, do not continue")
 		done <- struct{}{}
 	}
 
@@ -70,7 +82,21 @@ func (*reader) OnData(b []byte) bool {
 }
 
 func (*reader) OnError(b []byte) bool {
-	fmt.Print(string(b))
+
+	fmt.Print("ERROR:", string(b))
+
+	if strings.Contains(string(b), "No certificate matching the criteria") {
+
+		log.Println("Failed, do not continue")
+		done <- struct{}{}
+
+	}
+
+	if strings.Contains(string(b), "[ErrorCode: 0x8010002c]") {
+		log.Println("Failed, do not continue")
+		done <- struct{}{}
+	}
+
 	if !strings.Contains(string(b), "WARNING") {
 		errorc <- struct{}{}
 	}
